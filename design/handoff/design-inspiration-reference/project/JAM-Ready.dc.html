@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesque:wght@400;500;600;700;800&family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;}
+body{margin:0;background:#f7f0e8;font-family:'Hanken Grotesque',system-ui,sans-serif;-webkit-font-smoothing:antialiased;color:#17120d;}
+::selection{background:#f4853f;color:#fff;}
+@keyframes jamFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+</style>
+</helmet>
+
+<div style="width:100%;overflow:hidden;">
+
+  <!-- ================= HERO ================= -->
+  <section data-screen-label="Hero" style="position:relative;background:radial-gradient(125% 130% at 88% -10%,#f59f55 0%,#f4c594 24%,#f9ecdd 52%,#f7f0e8 100%);">
+
+    <!-- NAV -->
+    <nav style="max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:24px;padding:26px 32px 6px;">
+      <a href="#" style="display:flex;align-items:center;gap:12px;text-decoration:none;">
+        <span style="width:42px;height:42px;border-radius:14px;display:grid;place-items:center;background:linear-gradient(180deg,#3a342e,#120e0b);box-shadow:inset 0 1px 0 rgba(255,255,255,.25),0 8px 18px -8px rgba(20,12,4,.6);">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M3 11.5 12 4l9 7.5M5 10v9h5v-5h4v5h5v-9" stroke="#fff" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+        <span style="font-weight:800;font-size:21px;letter-spacing:-.5px;color:#17120d;white-space:nowrap;">JAM-Ready</span>
+      </a>
+
+      <div style="display:flex;gap:4px;padding:6px;border-radius:999px;background:rgba(255,255,255,.55);border:1px solid rgba(255,255,255,.7);backdrop-filter:blur(12px);box-shadow:inset 0 1px 0 rgba(255,255,255,.8),0 10px 24px -16px rgba(20,12,4,.4);">
+        <a href="#services" style="padding:10px 18px;border-radius:999px;text-decoration:none;font-weight:600;font-size:15px;color:#fff;background:linear-gradient(180deg,#3a342e,#161210);box-shadow:inset 0 1px 0 rgba(255,255,255,.2),0 6px 14px -8px rgba(20,12,4,.6);">What we do</a>
+        <a href="#how" style="padding:10px 18px;border-radius:999px;text-decoration:none;font-weight:600;font-size:15px;color:#5b5249;">How it works</a>
+        <a href="#proof" style="padding:10px 18px;border-radius:999px;text-decoration:none;font-weight:600;font-size:15px;color:#5b5249;">Proof</a>
+        <a href="#area" style="padding:10px 18px;border-radius:999px;text-decoration:none;font-weight:600;font-size:15px;color:#5b5249;">Service area</a>
+      </div>
+
+      <div style="display:flex;align-items:center;gap:12px;">
+        <a href="tel:5555550123" style="display:flex;align-items:center;gap:9px;padding:11px 18px;border-radius:999px;text-decoration:none;font-weight:700;font-size:15px;color:#17120d;background:linear-gradient(180deg,#fff,#f4ece2);border:1px solid #ebe0d0;box-shadow:inset 0 1px 0 #fff,0 6px 16px -10px rgba(20,12,4,.35);white-space:nowrap;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M4 5c0 8.3 6.7 15 15 15a2 2 0 0 0 2-2v-2.3a1 1 0 0 0-.8-1l-3.4-.7a1 1 0 0 0-1 .4l-.8 1.1a12 12 0 0 1-5.2-5.2l1.1-.8a1 1 0 0 0 .4-1l-.7-3.4a1 1 0 0 0-1-.8H6a2 2 0 0 0-2 2Z" stroke="#e9622c" stroke-width="1.8" stroke-linejoin="round"/></svg>
+          (555) 555-0123
+        </a>
+        <a href="#quote" style="display:inline-flex;align-items:center;gap:13px;padding:7px 7px 7px 22px;border-radius:999px;text-decoration:none;font-weight:600;font-size:15px;color:#fff;background:linear-gradient(180deg,#3a342e 0%,#171310 55%,#0c0907 100%);border:1px solid #0a0806;box-shadow:inset 0 1px 0 rgba(255,255,255,.22),0 12px 24px -10px rgba(20,12,4,.6),0 2px 4px rgba(0,0,0,.25);">
+          Get a free quote
+          <span style="width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(180deg,#fff,#e9e4dd);color:#17120d;box-shadow:inset 0 1px 0 #fff,0 2px 4px rgba(0,0,0,.3);">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </a>
+      </div>
+    </nav>
+
+    <!-- HERO BODY -->
+    <div style="max-width:1200px;margin:0 auto;padding:48px 32px 150px;display:grid;grid-template-columns:1.04fr .96fr;gap:56px;align-items:center;">
+      <div>
+        <span style="display:inline-flex;align-items:center;gap:9px;padding:8px 16px 8px 12px;border-radius:999px;background:rgba(255,255,255,.7);border:1px solid rgba(255,255,255,.85);font-weight:600;font-size:14px;color:#7a4a22;box-shadow:inset 0 1px 0 #fff,0 6px 16px -12px rgba(20,12,4,.4);">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="3" y="7" width="18" height="13" rx="3" stroke="#e9622c" stroke-width="1.8"/><circle cx="12" cy="13.5" r="3.2" stroke="#e9622c" stroke-width="1.8"/><path d="M8 7l1.4-2.2h5.2L16 7" stroke="#e9622c" stroke-width="1.8" stroke-linejoin="round"/></svg>
+          Photo-proof on every turn
+        </span>
+
+        <h1 style="margin:22px 0 0;font-size:clamp(40px,5.1vw,70px);line-height:.97;letter-spacing:-2px;font-weight:800;color:#17120d;text-wrap:balance;">
+          Rent-ready by your <span style="font-family:'Dancing Script',cursive;font-weight:700;color:#e9622c;letter-spacing:0;font-size:1.04em;padding:0 .03em;">deadline</span>. Proof the day it&rsquo;s <span style="font-family:'Dancing Script',cursive;font-weight:700;color:#17120d;letter-spacing:0;font-size:1.04em;">done</span>.
+        </h1>
+
+        <p style="margin:24px 0 0;max-width:480px;font-size:17.5px;line-height:1.6;color:#73685c;">
+          We patch, paint, clean, and refresh empty units fast &mdash; with date-stamped before &amp; after photos the day we finish. Most units rent-ready in <strong style="color:#17120d;">1 to 3 days</strong>.
+        </p>
+
+        <div style="display:flex;flex-wrap:wrap;gap:14px;margin-top:30px;">
+          <a href="#quote" style="display:inline-flex;align-items:center;gap:13px;padding:9px 9px 9px 26px;border-radius:999px;text-decoration:none;font-weight:600;font-size:16.5px;color:#fff;background:linear-gradient(180deg,#3a342e 0%,#171310 55%,#0c0907 100%);border:1px solid #0a0806;box-shadow:inset 0 1px 0 rgba(255,255,255,.22),0 14px 28px -10px rgba(20,12,4,.6),0 2px 4px rgba(0,0,0,.25);">
+            Get a free quote
+            <span style="width:40px;height:40px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(180deg,#f4853f,#e9622c 60%,#d8521f);color:#fff;box-shadow:inset 0 1px 0 rgba(255,255,255,.5),0 3px 6px rgba(0,0,0,.3);">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+          </a>
+          <a href="sms:5555550123" style="display:inline-flex;align-items:center;gap:11px;padding:15px 26px;border-radius:999px;text-decoration:none;font-weight:600;font-size:16.5px;color:#17120d;background:linear-gradient(180deg,#fff,#f4ece2);border:1px solid #e7dccd;box-shadow:inset 0 1px 0 #fff,0 6px 16px -10px rgba(20,12,4,.35);">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 6.5A2.5 2.5 0 0 1 6.5 4h11A2.5 2.5 0 0 1 20 6.5v7A2.5 2.5 0 0 1 17.5 16H9l-4 3.5V6.5Z" stroke="#17120d" stroke-width="1.8" stroke-linejoin="round"/></svg>
+            Text us a unit address
+          </a>
+        </div>
+
+        <div style="display:flex;flex-wrap:wrap;gap:22px;margin-top:30px;">
+          <span style="display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:14.5px;color:#73685c;">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M12 3l7 3v5c0 4.4-3 8-7 10-4-2-7-5.6-7-10V6l7-3Z" stroke="#e9622c" stroke-width="1.7" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" stroke="#e9622c" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Licensed &amp; insured
+          </span>
+          <span style="display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:14.5px;color:#73685c;">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M12 3.5l2.6 5.3 5.9.86-4.25 4.14 1 5.84L12 17.1 6.75 19.7l1-5.84L3.5 9.66l5.9-.86L12 3.5Z" fill="#e9622c"/></svg>
+            <strong style="color:#17120d;">5.0</strong> on Google
+          </span>
+          <span style="display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:14.5px;color:#73685c;">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8.5" stroke="#e9622c" stroke-width="1.7"/><path d="M12 7.5V12l3 2" stroke="#e9622c" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <strong style="color:#17120d;">98%</strong> on-time
+          </span>
+        </div>
+      </div>
+
+      <!-- PROOF SLIDER CARD -->
+      <div style="position:relative;">
+        <div style="position:relative;border-radius:30px;padding:9px;background:linear-gradient(155deg,#f7a25a,#e9622c 52%,#c8481a);box-shadow:inset 0 1px 0 rgba(255,255,255,.45),0 44px 72px -32px rgba(217,82,31,.55),0 12px 34px -16px rgba(20,12,4,.45);">
+          <div ref="{{ sliderRef }}" onMouseDown="{{ onSliderDown }}" onTouchStart="{{ onSliderDown }}" style="position:relative;border-radius:22px;overflow:hidden;height:438px;background:#dfe4e9;cursor:ew-resize;user-select:none;touch-action:none;">
+
+            <!-- BEFORE (base) -->
+            <div style="position:absolute;inset:0;background:linear-gradient(180deg,#cfc4b4 0%,#c6bba9 68%,#c6bba9 68%);">
+              <div style="position:absolute;left:0;right:0;top:68%;bottom:0;background:linear-gradient(180deg,#ab9a82,#a08c72);"></div>
+              <div style="position:absolute;left:0;right:0;top:66.4%;height:10px;background:#9c8c74;"></div>
+              <!-- worn window -->
+              <div style="position:absolute;right:8%;top:16%;width:34%;height:38%;border-radius:4px;background:#aeb4b6;border:7px solid #929890;box-shadow:inset 0 0 0 7px #97928a;"></div>
+              <div style="position:absolute;right:8%;top:16%;width:34%;height:38%;border-radius:4px;background:#a9b0b3;box-shadow:inset 0 0 0 6px #8f897f;"></div>
+              <div style="position:absolute;right:25%;top:16%;width:2px;height:38%;background:#8f897f;"></div>
+              <div style="position:absolute;right:8%;top:34%;width:34%;height:2px;background:#8f897f;"></div>
+              <!-- scuffs / nail holes / crack -->
+              <div style="position:absolute;left:14%;top:30%;width:46px;height:30px;border-radius:50%;background:rgba(90,72,52,.18);filter:blur(3px);"></div>
+              <div style="position:absolute;left:20%;top:44%;width:2px;height:60px;background:rgba(70,55,40,.35);transform:rotate(8deg);"></div>
+              <div style="position:absolute;left:30%;top:38%;width:6px;height:6px;border-radius:50%;background:rgba(50,38,26,.45);"></div>
+              <div style="position:absolute;left:33%;top:35%;width:5px;height:5px;border-radius:50%;background:rgba(50,38,26,.4);"></div>
+              <div style="position:absolute;left:8%;top:74%;width:120px;height:24px;border-radius:50%;background:rgba(60,46,32,.16);filter:blur(4px);"></div>
+              <span style="position:absolute;left:14px;top:14px;display:inline-flex;align-items:center;gap:6px;padding:6px 11px;border-radius:8px;background:rgba(20,14,9,.72);color:#fff;font-size:12px;font-weight:700;letter-spacing:.3px;backdrop-filter:blur(4px);">BEFORE &middot; 06/14</span>
+            </div>
+
+            <!-- AFTER (clipped) -->
+            <div style="{{ afterStyle }}">
+              <div style="position:absolute;inset:0;background:linear-gradient(180deg,#f5ede1 0%,#f1e7d8 68%,#f1e7d8 68%);">
+                <div style="position:absolute;left:0;right:0;top:68%;bottom:0;background:linear-gradient(180deg,#d4b285,#c49f6c);"></div>
+                <div style="position:absolute;left:0;right:0;top:68%;bottom:0;background:repeating-linear-gradient(90deg,rgba(120,86,46,.12) 0 1px,transparent 1px 64px);"></div>
+                <div style="position:absolute;left:0;right:0;top:66.2%;height:11px;background:#ffffff;box-shadow:0 1px 2px rgba(0,0,0,.08);"></div>
+                <!-- clean window + light -->
+                <div style="position:absolute;right:8%;top:15.4%;width:34%;height:39%;border-radius:5px;background:linear-gradient(160deg,#dcebf6,#c2d9ec);border:8px solid #ffffff;box-shadow:0 10px 24px -10px rgba(20,12,4,.25),inset 0 0 0 1px rgba(0,0,0,.04);"></div>
+                <div style="position:absolute;right:25%;top:15.4%;width:3px;height:39%;background:#fff;"></div>
+                <div style="position:absolute;right:8%;top:34.4%;width:34%;height:3px;background:#fff;"></div>
+                <div style="position:absolute;right:13%;top:20%;width:30px;height:120px;background:linear-gradient(180deg,rgba(255,247,230,.85),rgba(255,247,230,0));transform:skewX(-16deg);filter:blur(3px);"></div>
+                <!-- plant -->
+                <div style="position:absolute;left:11%;bottom:5%;width:34px;height:26px;border-radius:4px 4px 8px 8px;background:linear-gradient(180deg,#d98a55,#bf6f3c);"></div>
+                <div style="position:absolute;left:9.5%;bottom:11.5%;width:46px;height:46px;border-radius:50% 50% 50% 0;background:#5d8a52;transform:rotate(12deg);"></div>
+                <div style="position:absolute;left:14%;bottom:13%;width:40px;height:40px;border-radius:50% 0 50% 50%;background:#6fa05f;transform:rotate(-8deg);"></div>
+                <span style="position:absolute;right:14px;top:14px;display:inline-flex;align-items:center;gap:6px;padding:6px 11px;border-radius:8px;background:rgba(233,98,44,.92);color:#fff;font-size:12px;font-weight:700;letter-spacing:.3px;">AFTER &middot; 06/16</span>
+              </div>
+            </div>
+
+            <!-- caption -->
+            <div style="position:absolute;left:14px;bottom:14px;display:inline-flex;align-items:center;gap:8px;padding:8px 13px;border-radius:10px;background:rgba(20,14,9,.78);color:#fff;font-size:13px;font-weight:600;backdrop-filter:blur(6px);z-index:3;">
+              <span style="width:7px;height:7px;border-radius:50%;background:#5ad27a;box-shadow:0 0 8px #5ad27a;"></span>
+              Full turn, finished in 2 days
+            </div>
+
+            <!-- handle -->
+            <div style="{{ handleStyle }}">
+              <span style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:46px;height:46px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(180deg,#fff,#f0ece6);box-shadow:0 6px 16px -4px rgba(20,12,4,.5),inset 0 1px 0 #fff;color:#17120d;">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M9 7l-4 5 4 5M15 7l4 5-4 5" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- floating verified chip -->
+        <div style="position:absolute;right:-8px;top:-18px;display:inline-flex;align-items:center;gap:9px;padding:11px 16px;border-radius:14px;background:#fff;border:1px solid #efe5d7;box-shadow:0 18px 40px -16px rgba(20,12,4,.4);animation:jamFloat 5s ease-in-out infinite;">
+          <span style="width:30px;height:30px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(180deg,#5ad27a,#34a85a);box-shadow:inset 0 1px 0 rgba(255,255,255,.5);">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12.5l4.5 4.5L19 7" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+          <span style="font-size:13px;line-height:1.2;"><strong style="display:block;color:#17120d;">Owner approved</strong><span style="color:#8a8073;">photos delivered</span></span>
+        </div>
+
+        <p style="margin:16px 4px 0;font-size:14px;color:#8a8073;text-align:center;">Drag to see the difference &mdash; the same proof your owner gets.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= GLASS QUOTE WIDGET ================= -->
+  <section id="quote" style="background:linear-gradient(180deg,#f7f0e8 0%,#ffffff 55%);">
+    <div style="max-width:1080px;margin:0 auto;padding:0 32px;transform:translateY(-78px);">
+      <div style="border-radius:26px;padding:22px;background:linear-gradient(180deg,rgba(255,255,255,.72),rgba(255,255,255,.5));backdrop-filter:blur(22px);border:1px solid rgba(255,255,255,.7);box-shadow:inset 0 1px 0 rgba(255,255,255,.85),0 40px 80px -34px rgba(20,12,4,.4);">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:18px;">
+          <div style="display:flex;gap:6px;padding:5px;border-radius:999px;background:rgba(247,240,232,.8);border:1px solid rgba(20,12,4,.06);">
+            <span style="padding:9px 18px;border-radius:999px;font-weight:700;font-size:14.5px;color:#fff;background:linear-gradient(180deg,#3a342e,#161210);box-shadow:inset 0 1px 0 rgba(255,255,255,.2);">Standard turn</span>
+            <span style="padding:9px 18px;border-radius:999px;font-weight:600;font-size:14.5px;color:#6b6256;">Deep turn</span>
+            <span style="padding:9px 18px;border-radius:999px;font-weight:600;font-size:14.5px;color:#6b6256;">Make-ready</span>
+          </div>
+          <span style="display:inline-flex;align-items:center;gap:8px;font-size:13.5px;font-weight:600;color:#34a85a;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12.5l4.5 4.5L19 7" stroke="#34a85a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            No deposit to book &middot; same-day callback
+          </span>
+        </div>
+
+        <div style="display:grid;grid-template-columns:1.5fr 1fr 1fr auto;gap:14px;align-items:end;">
+          <label style="display:block;">
+            <span style="display:block;font-size:12.5px;font-weight:700;letter-spacing:.3px;text-transform:uppercase;color:#9a9082;margin-bottom:7px;">Unit address</span>
+            <div style="display:flex;align-items:center;gap:9px;padding:13px 16px;border-radius:13px;background:#fff;border:1px solid #ece1d1;box-shadow:inset 0 1px 2px rgba(20,12,4,.04);">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M12 21s7-5.2 7-11a7 7 0 1 0-14 0c0 5.8 7 11 7 11Z" stroke="#c9bdac" stroke-width="1.7"/><circle cx="12" cy="10" r="2.5" stroke="#c9bdac" stroke-width="1.7"/></svg>
+              <span style="font-size:15px;color:#a79c8d;">123 Birch St, Unit 4&hellip;</span>
+            </div>
+          </label>
+          <label style="display:block;">
+            <span style="display:block;font-size:12.5px;font-weight:700;letter-spacing:.3px;text-transform:uppercase;color:#9a9082;margin-bottom:7px;">Beds / baths</span>
+            <div style="display:flex;align-items:center;justify-content:space-between;padding:13px 16px;border-radius:13px;background:#fff;border:1px solid #ece1d1;">
+              <span style="font-size:15px;color:#17120d;font-weight:600;">2 bd &middot; 1 ba</span>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#b3a895" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+          </label>
+          <label style="display:block;">
+            <span style="display:block;font-size:12.5px;font-weight:700;letter-spacing:.3px;text-transform:uppercase;color:#9a9082;margin-bottom:7px;">Need it by</span>
+            <div style="display:flex;align-items:center;justify-content:space-between;padding:13px 16px;border-radius:13px;background:#fff;border:1px solid #ece1d1;">
+              <span style="font-size:15px;color:#17120d;font-weight:600;">Fri, Jun 26</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="4" y="5" width="16" height="15" rx="2.5" stroke="#b3a895" stroke-width="1.7"/><path d="M4 9h16M8 3v4M16 3v4" stroke="#b3a895" stroke-width="1.7" stroke-linecap="round"/></svg>
+            </div>
+          </label>
+          <a href="#" style="display:inline-flex;align-items:center;gap:12px;padding:13px 13px 13px 24px;border-radius:13px;text-decoration:none;font-weight:600;font-size:16px;color:#fff;white-space:nowrap;background:linear-gradient(180deg,#f4853f 0%,#e9622c 55%,#d8521f 100%);border:1px solid #c64c1c;box-shadow:inset 0 1px 0 rgba(255,255,255,.45),0 14px 26px -10px rgba(217,82,31,.6);">
+            Get my quote
+            <span style="width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:rgba(255,255,255,.92);color:#d8521f;box-shadow:inset 0 1px 0 #fff;">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= WHAT WE DO ================= -->
+  <section id="services" style="background:#fff;padding:18px 0 96px;">
+    <div style="max-width:1200px;margin:0 auto;padding:0 32px;">
+      <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:24px;flex-wrap:wrap;margin-bottom:40px;">
+        <div>
+          <span style="display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:13.5px;letter-spacing:.4px;text-transform:uppercase;color:#e9622c;">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="#e9622c"><path d="M12 2l2.4 6.6L21 11l-6.6 2.4L12 20l-2.4-6.6L3 11l6.6-2.4L12 2Z"/></svg>
+            What we do
+          </span>
+          <h2 style="margin:14px 0 0;font-size:clamp(30px,3.7vw,46px);line-height:1.04;letter-spacing:-1.4px;font-weight:800;color:#17120d;">
+            Everything a unit needs <span style="font-family:'Dancing Script',cursive;font-weight:700;color:#e9622c;letter-spacing:0;font-size:1.06em;">between tenants</span>
+          </h2>
+        </div>
+        <p style="max-width:330px;font-size:15.5px;line-height:1.6;color:#73685c;margin:0;">One crew, one invoice, one deadline. We handle the full make-ready so you can re-list the day we leave.</p>
+      </div>
+
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:20px;">
+        <div style="padding:26px;border-radius:22px;background:linear-gradient(180deg,#fffdfa,#fbf5ee);border:1px solid #efe6da;box-shadow:0 18px 40px -28px rgba(20,12,4,.3);">
+          <span style="width:50px;height:50px;border-radius:15px;display:grid;place-items:center;background:linear-gradient(180deg,#fde7d6,#f9d3b8);box-shadow:inset 0 1px 0 #fff;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M14 4l6 6-9 9H5v-6l9-9Z" stroke="#d8521f" stroke-width="1.8" stroke-linejoin="round"/><path d="M13 5l6 6" stroke="#d8521f" stroke-width="1.8"/></svg>
+          </span>
+          <h3 style="margin:18px 0 8px;font-size:19px;font-weight:800;letter-spacing:-.4px;color:#17120d;">Patch &amp; repair</h3>
+          <p style="margin:0;font-size:14.5px;line-height:1.55;color:#7b7064;">Holes, dents, nail pops and caulk lines &mdash; filled, sanded and blended smooth.</p>
+        </div>
+        <div style="padding:26px;border-radius:22px;background:linear-gradient(180deg,#fffdfa,#fbf5ee);border:1px solid #efe6da;box-shadow:0 18px 40px -28px rgba(20,12,4,.3);">
+          <span style="width:50px;height:50px;border-radius:15px;display:grid;place-items:center;background:linear-gradient(180deg,#fde7d6,#f9d3b8);box-shadow:inset 0 1px 0 #fff;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 13l7-7 4 4-7 7H4v-4Z" stroke="#d8521f" stroke-width="1.8" stroke-linejoin="round"/><path d="M14 6l2-2a2 2 0 0 1 3 3l-2 2M14 18h6" stroke="#d8521f" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+          <h3 style="margin:18px 0 8px;font-size:19px;font-weight:800;letter-spacing:-.4px;color:#17120d;">Paint &amp; touch-up</h3>
+          <p style="margin:0;font-size:14.5px;line-height:1.55;color:#7b7064;">Fresh coats or precision touch-ups in the right sheen and color match.</p>
+        </div>
+        <div style="padding:26px;border-radius:22px;background:linear-gradient(180deg,#fffdfa,#fbf5ee);border:1px solid #efe6da;box-shadow:0 18px 40px -28px rgba(20,12,4,.3);">
+          <span style="width:50px;height:50px;border-radius:15px;display:grid;place-items:center;background:linear-gradient(180deg,#fde7d6,#f9d3b8);box-shadow:inset 0 1px 0 #fff;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M8 3v8M5 11h6v3a3 3 0 0 1-6 0v-3ZM8 21v-4" stroke="#d8521f" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M16 4c2 1.5 2 4 0 5.5S14 13 16 15" stroke="#d8521f" stroke-width="1.8" stroke-linecap="round"/></svg>
+          </span>
+          <h3 style="margin:18px 0 8px;font-size:19px;font-weight:800;letter-spacing:-.4px;color:#17120d;">Deep clean</h3>
+          <p style="margin:0;font-size:14.5px;line-height:1.55;color:#7b7064;">Floors, fixtures, appliances and glass brought to move-in spotless.</p>
+        </div>
+        <div style="padding:26px;border-radius:22px;background:linear-gradient(180deg,#fffdfa,#fbf5ee);border:1px solid #efe6da;box-shadow:0 18px 40px -28px rgba(20,12,4,.3);">
+          <span style="width:50px;height:50px;border-radius:15px;display:grid;place-items:center;background:linear-gradient(180deg,#fde7d6,#f9d3b8);box-shadow:inset 0 1px 0 #fff;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 3l2.4 4.9 5.4.8-3.9 3.8.9 5.4L12 15.8 7.2 18l.9-5.4-3.9-3.8 5.4-.8L12 3Z" stroke="#d8521f" stroke-width="1.7" stroke-linejoin="round"/></svg>
+          </span>
+          <h3 style="margin:18px 0 8px;font-size:19px;font-weight:800;letter-spacing:-.4px;color:#17120d;">Refresh &amp; stage</h3>
+          <p style="margin:0;font-size:14.5px;line-height:1.55;color:#7b7064;">Hardware, blinds, bulbs and the small fixes the next tenant notices first.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= WHY OWNERS (mirror Connecting) ================= -->
+  <section id="how" style="background:#f7f0e8;padding:90px 0;">
+    <div style="max-width:1200px;margin:0 auto;padding:0 32px;">
+      <div style="text-align:center;margin-bottom:46px;">
+        <span style="font-weight:700;font-size:13.5px;letter-spacing:.4px;text-transform:uppercase;color:#9a8b76;">Built for owners &amp; PMs</span>
+        <h2 style="margin:12px auto 0;max-width:680px;font-size:clamp(28px,3.5vw,44px);line-height:1.06;letter-spacing:-1.4px;font-weight:800;color:#17120d;">
+          One crew that makes every turn <span style="font-family:'Dancing Script',cursive;font-weight:700;color:#e9622c;letter-spacing:0;font-size:1.06em;">simple &amp; on time</span>
+        </h2>
+      </div>
+
+      <div style="display:grid;grid-template-columns:1.15fr 1fr;gap:22px;">
+        <!-- left feature -->
+        <div style="display:grid;grid-template-rows:auto auto;gap:18px;">
+          <div style="position:relative;border-radius:22px;overflow:hidden;height:280px;border:1px solid #ece1d1;box-shadow:0 24px 50px -30px rgba(20,12,4,.4);">
+            <x-import component-from-global-scope="image-slot" from="./image-slot.js" id="jam-feature" shape="rect" placeholder="Drop a finished-unit photo" hint-size="100%,100%" style="display:block;width:100%;height:100%;"></x-import>
+            <div style="position:absolute;left:16px;bottom:16px;display:inline-flex;align-items:center;gap:8px;padding:9px 14px;border-radius:11px;background:rgba(20,14,9,.74);color:#fff;font-size:13px;font-weight:600;backdrop-filter:blur(6px);">
+              <span style="width:7px;height:7px;border-radius:50%;background:#5ad27a;"></span> Move-in ready &middot; signed off
+            </div>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:18px;">
+            <div style="padding:22px;border-radius:20px;background:#fff;border:1px solid #ece1d1;box-shadow:0 16px 36px -28px rgba(20,12,4,.3);">
+              <span style="width:42px;height:42px;border-radius:50%;display:grid;place-items:center;background:#f6efe6;border:1px solid #ece1d1;">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7Z" stroke="#17120d" stroke-width="1.7"/><circle cx="12" cy="12" r="3" stroke="#17120d" stroke-width="1.7"/></svg>
+              </span>
+              <h4 style="margin:14px 0 6px;font-size:16.5px;font-weight:800;color:#17120d;">Our promise</h4>
+              <p style="margin:0;font-size:13.5px;line-height:1.5;color:#7b7064;">Hit the deadline or we eat the rush. Every turn documented end to end.</p>
+            </div>
+            <div style="padding:22px;border-radius:20px;background:#fff;border:1px solid #ece1d1;box-shadow:0 16px 36px -28px rgba(20,12,4,.3);">
+              <span style="width:42px;height:42px;border-radius:50%;display:grid;place-items:center;background:#f6efe6;border:1px solid #ece1d1;">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="9" cy="8" r="3" stroke="#17120d" stroke-width="1.7"/><path d="M3.5 19a5.5 5.5 0 0 1 11 0M16 6.5a3 3 0 0 1 0 5.5M21 19a5 5 0 0 0-4-4.9" stroke="#17120d" stroke-width="1.7" stroke-linecap="round"/></svg>
+              </span>
+              <h4 style="margin:14px 0 6px;font-size:16.5px;font-weight:800;color:#17120d;">Our crew</h4>
+              <p style="margin:0;font-size:13.5px;line-height:1.5;color:#7b7064;">Background-checked, uniformed, and trained on the make-ready checklist.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- right stats 2x2 -->
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:18px;">
+          <div style="position:relative;padding:26px;border-radius:20px;background:#fff;border:1px solid #ece1d1;box-shadow:0 16px 36px -28px rgba(20,12,4,.3);">
+            <span style="position:absolute;right:18px;top:18px;width:34px;height:34px;border-radius:50%;display:grid;place-items:center;border:1px solid #ece1d1;color:#b3a895;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <div style="margin-top:48px;font-size:40px;font-weight:800;letter-spacing:-1.5px;color:#17120d;">200+</div>
+            <div style="font-size:14.5px;color:#8a8073;margin-top:4px;">Units turned</div>
+          </div>
+          <div style="position:relative;padding:26px;border-radius:20px;background:#fff;border:1px solid #ece1d1;box-shadow:0 16px 36px -28px rgba(20,12,4,.3);">
+            <span style="position:absolute;right:18px;top:18px;width:34px;height:34px;border-radius:50%;display:grid;place-items:center;border:1px solid #ece1d1;color:#b3a895;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <div style="margin-top:48px;font-size:40px;font-weight:800;letter-spacing:-1.5px;color:#17120d;">98%</div>
+            <div style="font-size:14.5px;color:#8a8073;margin-top:4px;">Finished on time</div>
+          </div>
+          <div style="position:relative;padding:26px;border-radius:20px;background:linear-gradient(165deg,#3a342e,#161210);border:1px solid #0c0907;box-shadow:0 22px 44px -26px rgba(20,12,4,.5);">
+            <span style="position:absolute;right:18px;top:18px;width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(180deg,#f4853f,#e9622c);color:#fff;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <div style="margin-top:48px;font-size:40px;font-weight:800;letter-spacing:-1.5px;color:#fff;">2.1<span style="font-size:20px;font-weight:700;"> days</span></div>
+            <div style="font-size:14.5px;color:#c8bfb2;margin-top:4px;">Average turnaround</div>
+          </div>
+          <div style="position:relative;padding:26px;border-radius:20px;background:#fff;border:1px solid #ece1d1;box-shadow:0 16px 36px -28px rgba(20,12,4,.3);">
+            <span style="position:absolute;right:18px;top:18px;width:34px;height:34px;border-radius:50%;display:grid;place-items:center;border:1px solid #ece1d1;color:#b3a895;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <div style="margin-top:48px;font-size:40px;font-weight:800;letter-spacing:-1.5px;color:#17120d;">100%</div>
+            <div style="font-size:14.5px;color:#8a8073;margin-top:4px;">Photo-documented</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CTA BANNER (mirror green house) ================= -->
+  <section style="background:#fff;padding:0 0 90px;">
+    <div style="max-width:1200px;margin:0 auto;padding:0 32px;">
+      <div style="position:relative;border-radius:28px;overflow:hidden;padding:64px 48px 30px;background:linear-gradient(135deg,#241710 0%,#7a3a16 58%,#e9622c 130%);box-shadow:0 40px 80px -36px rgba(20,12,4,.5);">
+        <div style="position:absolute;inset:0;background:radial-gradient(80% 120% at 90% 0%,rgba(255,180,110,.35),transparent 60%);"></div>
+        <div style="position:relative;text-align:center;max-width:680px;margin:0 auto;">
+          <h2 style="margin:0;font-size:clamp(28px,3.4vw,44px);line-height:1.05;letter-spacing:-1.4px;font-weight:800;color:#fff;">
+            Turn the vacancy <span style="font-family:'Dancing Script',cursive;font-weight:700;color:#ffd0a8;letter-spacing:0;font-size:1.06em;">into income</span>
+          </h2>
+          <p style="margin:16px auto 26px;max-width:520px;font-size:16px;line-height:1.6;color:rgba(255,255,255,.82);">Every day a unit sits empty is rent you don&rsquo;t get back. Book the turn today and re-list by the weekend.</p>
+          <a href="#quote" style="display:inline-flex;align-items:center;gap:13px;padding:9px 9px 9px 26px;border-radius:999px;text-decoration:none;font-weight:600;font-size:16px;color:#17120d;background:linear-gradient(180deg,#fff,#f2e9dd);border:1px solid #fff;box-shadow:inset 0 1px 0 #fff,0 14px 28px -12px rgba(0,0,0,.5);">
+            Book a turn
+            <span style="width:38px;height:38px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(180deg,#3a342e,#161210);color:#fff;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </a>
+        </div>
+
+        <div style="position:relative;display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:46px;">
+          <div style="padding:22px 24px;border-radius:18px;background:rgba(255,255,255,.96);box-shadow:0 18px 40px -22px rgba(0,0,0,.4);">
+            <span style="width:40px;height:40px;border-radius:50%;display:grid;place-items:center;background:#17120d;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3v18M7 8h10M6 13h12" stroke="#fff" stroke-width="1.8" stroke-linecap="round"/></svg>
+            </span>
+            <h4 style="margin:14px 0 6px;font-size:17px;font-weight:800;color:#17120d;">Know the scope up front</h4>
+            <p style="margin:0;font-size:14px;line-height:1.5;color:#7b7064;">A line-item walkthrough quote before we lift a brush &mdash; no surprise add-ons.</p>
+          </div>
+          <div style="padding:22px 24px;border-radius:18px;background:rgba(255,255,255,.96);box-shadow:0 18px 40px -22px rgba(0,0,0,.4);">
+            <span style="width:40px;height:40px;border-radius:50%;display:grid;place-items:center;background:#17120d;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="3" y="6" width="18" height="12" rx="2.5" stroke="#fff" stroke-width="1.8"/><path d="M3 10h18" stroke="#fff" stroke-width="1.8"/></svg>
+            </span>
+            <h4 style="margin:14px 0 6px;font-size:17px;font-weight:800;color:#17120d;">Pay after sign-off</h4>
+            <p style="margin:0;font-size:14px;line-height:1.5;color:#7b7064;">Invoice lands with the after-photos. Net terms for managed portfolios.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= PROOF GALLERY ================= -->
+  <section id="proof" style="background:#fff;padding:0 0 96px;">
+    <div style="max-width:1200px;margin:0 auto;padding:0 32px;">
+      <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:24px;flex-wrap:wrap;margin-bottom:38px;">
+        <h2 style="margin:0;font-size:clamp(28px,3.5vw,44px);line-height:1.05;letter-spacing:-1.4px;font-weight:800;color:#17120d;">
+          Real turns, <span style="font-family:'Dancing Script',cursive;font-weight:700;color:#e9622c;letter-spacing:0;font-size:1.06em;">photo-documented</span>
+        </h2>
+        <div style="display:flex;align-items:center;gap:12px;">
+          <span style="font-size:13.5px;font-weight:600;color:#8a8073;">01 / 08</span>
+          <span style="width:42px;height:42px;border-radius:50%;display:grid;place-items:center;background:#f6efe6;border:1px solid #ece1d1;color:#17120d;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M19 12H5M11 6l-6 6 6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <span style="width:42px;height:42px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(180deg,#3a342e,#161210);color:#fff;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;">
+        <div>
+          <div style="position:relative;border-radius:20px;overflow:hidden;height:280px;border:1px solid #ece1d1;box-shadow:0 22px 46px -30px rgba(20,12,4,.4);">
+            <x-import component-from-global-scope="image-slot" from="./image-slot.js" id="jam-proof-1" shape="rect" placeholder="Kitchen turn" hint-size="100%,100%" style="display:block;width:100%;height:100%;"></x-import>
+            <span style="position:absolute;left:14px;top:14px;padding:6px 11px;border-radius:8px;background:rgba(233,98,44,.92);color:#fff;font-size:12px;font-weight:700;">AFTER</span>
+          </div>
+          <h4 style="margin:16px 0 0;font-size:18px;font-weight:700;color:#17120d;">Kitchen make-ready</h4>
+          <p style="margin:4px 0 0;font-size:14px;color:#8a8073;">Patched, repainted, deep-cleaned &middot; 2 days</p>
+        </div>
+        <div>
+          <div style="position:relative;border-radius:20px;overflow:hidden;height:280px;border:1px solid #ece1d1;box-shadow:0 22px 46px -30px rgba(20,12,4,.4);">
+            <x-import component-from-global-scope="image-slot" from="./image-slot.js" id="jam-proof-2" shape="rect" placeholder="Living room turn" hint-size="100%,100%" style="display:block;width:100%;height:100%;"></x-import>
+            <span style="position:absolute;left:14px;top:14px;padding:6px 11px;border-radius:8px;background:rgba(233,98,44,.92);color:#fff;font-size:12px;font-weight:700;">AFTER</span>
+          </div>
+          <h4 style="margin:16px 0 0;font-size:18px;font-weight:700;color:#17120d;">Full repaint &amp; refresh</h4>
+          <p style="margin:4px 0 0;font-size:14px;color:#8a8073;">Walls, trim, hardware &middot; 3 days</p>
+        </div>
+        <div>
+          <div style="position:relative;border-radius:20px;overflow:hidden;height:280px;border:1px solid #ece1d1;box-shadow:0 22px 46px -30px rgba(20,12,4,.4);">
+            <x-import component-from-global-scope="image-slot" from="./image-slot.js" id="jam-proof-3" shape="rect" placeholder="Bathroom turn" hint-size="100%,100%" style="display:block;width:100%;height:100%;"></x-import>
+            <span style="position:absolute;left:14px;top:14px;padding:6px 11px;border-radius:8px;background:rgba(233,98,44,.92);color:#fff;font-size:12px;font-weight:700;">AFTER</span>
+          </div>
+          <h4 style="margin:16px 0 0;font-size:18px;font-weight:700;color:#17120d;">Bathroom detail</h4>
+          <p style="margin:4px 0 0;font-size:14px;color:#8a8073;">Re-caulk, regrout, deep clean &middot; 1 day</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= TESTIMONIALS (dark) ================= -->
+  <section id="area" style="background:#161210;padding:80px 0;">
+    <div style="max-width:1200px;margin:0 auto;padding:0 32px;">
+      <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:30px;flex-wrap:wrap;margin-bottom:40px;">
+        <h2 style="margin:0;font-size:clamp(28px,3.4vw,42px);line-height:1.06;letter-spacing:-1.3px;font-weight:800;color:#fff;max-width:520px;">
+          Trusted by the people who <span style="font-family:'Dancing Script',cursive;font-weight:700;color:#f4853f;letter-spacing:0;font-size:1.06em;">manage units</span>
+        </h2>
+        <p style="margin:6px 0 0;max-width:340px;font-size:15px;line-height:1.6;color:#9b9286;">Owners, property managers and leasing teams who count on us to keep turns short and re-lists on schedule.</p>
+      </div>
+
+      <div style="display:grid;grid-template-columns:280px 1fr;gap:28px;align-items:stretch;">
+        <div style="border-radius:22px;overflow:hidden;border:1px solid #2a2520;min-height:300px;">
+          <x-import component-from-global-scope="image-slot" from="./image-slot.js" id="jam-testi" shape="rect" placeholder="Client photo" hint-size="100%,100%" style="display:block;width:100%;height:100%;"></x-import>
+        </div>
+        <div style="position:relative;padding:38px 40px;border-radius:22px;background:linear-gradient(165deg,#211c17,#17120d);border:1px solid #2a2520;">
+          <span style="font-family:'Dancing Script',cursive;font-size:64px;line-height:.4;color:#f4853f;">&ldquo;</span>
+          <h3 style="margin:6px 0 14px;font-size:24px;font-weight:800;letter-spacing:-.6px;color:#fff;">Smooth from key handoff to re-list.</h3>
+          <p style="margin:0;max-width:560px;font-size:16px;line-height:1.65;color:#c8bfb2;">Two units turned in a week, both with full before/after sets in my inbox before I&rsquo;d even driven over. The photos alone make my owner reports effortless. Easiest vendor I work with.</p>
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-top:28px;">
+            <div style="display:flex;align-items:center;gap:14px;">
+              <span style="width:46px;height:46px;border-radius:50%;display:grid;place-items:center;font-weight:800;color:#fff;background:linear-gradient(160deg,#f4853f,#d8521f);">DM</span>
+              <div>
+                <div style="font-weight:700;font-size:15.5px;color:#fff;">Dana Mercer</div>
+                <div style="font-size:13.5px;color:#9b9286;">Property manager &middot; 40 units</div>
+              </div>
+            </div>
+            <a href="#quote" style="display:inline-flex;align-items:center;gap:11px;padding:8px 8px 8px 20px;border-radius:999px;text-decoration:none;font-weight:600;font-size:14.5px;color:#17120d;background:linear-gradient(180deg,#fff,#ece4d8);box-shadow:inset 0 1px 0 #fff;">
+              Get the same turn
+              <span style="width:32px;height:32px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(180deg,#3a342e,#161210);color:#fff;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer style="background:#fff;padding:64px 0 30px;">
+    <div style="max-width:1200px;margin:0 auto;padding:0 32px;">
+      <div style="display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:32px;padding-bottom:40px;border-bottom:1px solid #ece1d1;">
+        <div>
+          <a href="#" style="display:flex;align-items:center;gap:12px;text-decoration:none;margin-bottom:16px;">
+            <span style="width:40px;height:40px;border-radius:13px;display:grid;place-items:center;background:linear-gradient(180deg,#3a342e,#120e0b);">
+              <svg width="19" height="19" viewBox="0 0 24 24" fill="none"><path d="M3 11.5 12 4l9 7.5M5 10v9h5v-5h4v5h5v-9" stroke="#fff" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            <span style="font-weight:800;font-size:19px;color:#17120d;">JAM-Ready</span>
+          </a>
+          <p style="margin:0;max-width:280px;font-size:14.5px;line-height:1.6;color:#8a8073;">Fast, photo-documented make-readies for owners and property managers. Rent-ready by your deadline.</p>
+          <div style="display:flex;gap:18px;margin-top:18px;font-size:14.5px;">
+            <a href="tel:5555550123" style="font-weight:700;color:#17120d;text-decoration:none;">(555) 555-0123</a>
+            <a href="mailto:hi@jamready.co" style="font-weight:600;color:#8a8073;text-decoration:none;">hi@jamready.co</a>
+          </div>
+        </div>
+        <div>
+          <div style="font-weight:800;font-size:15px;color:#17120d;margin-bottom:14px;">Services</div>
+          <a href="#services" style="display:block;margin-bottom:10px;font-size:14.5px;color:#8a8073;text-decoration:none;">Patch &amp; repair</a>
+          <a href="#services" style="display:block;margin-bottom:10px;font-size:14.5px;color:#8a8073;text-decoration:none;">Paint &amp; touch-up</a>
+          <a href="#services" style="display:block;margin-bottom:10px;font-size:14.5px;color:#8a8073;text-decoration:none;">Deep clean</a>
+          <a href="#services" style="display:block;font-size:14.5px;color:#8a8073;text-decoration:none;">Refresh &amp; stage</a>
+        </div>
+        <div>
+          <div style="font-weight:800;font-size:15px;color:#17120d;margin-bottom:14px;">Company</div>
+          <a href="#how" style="display:block;margin-bottom:10px;font-size:14.5px;color:#8a8073;text-decoration:none;">How it works</a>
+          <a href="#proof" style="display:block;margin-bottom:10px;font-size:14.5px;color:#8a8073;text-decoration:none;">Proof gallery</a>
+          <a href="#area" style="display:block;margin-bottom:10px;font-size:14.5px;color:#8a8073;text-decoration:none;">Service area</a>
+          <a href="#quote" style="display:block;font-size:14.5px;color:#8a8073;text-decoration:none;">Get a quote</a>
+        </div>
+        <div>
+          <div style="font-weight:800;font-size:15px;color:#17120d;margin-bottom:14px;">Service area</div>
+          <p style="margin:0 0 14px;font-size:14.5px;line-height:1.6;color:#8a8073;">Greater metro &amp; surrounding suburbs. Crews dispatched daily, Mon&ndash;Sat.</p>
+          <div style="display:flex;gap:10px;">
+            <a href="#" style="width:38px;height:38px;border-radius:50%;display:grid;place-items:center;background:#17120d;color:#fff;text-decoration:none;"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M14 9h2V6h-2c-1.7 0-3 1.3-3 3v2H9v3h2v6h3v-6h2.2l.8-3H14V9.5c0-.3.2-.5.5-.5Z"/></svg></a>
+            <a href="#" style="width:38px;height:38px;border-radius:50%;display:grid;place-items:center;border:1px solid #ece1d1;color:#17120d;text-decoration:none;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="4" y="4" width="16" height="16" rx="5" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="3.4" stroke="currentColor" stroke-width="1.8"/><circle cx="17" cy="7" r="1.2" fill="currentColor"/></svg></a>
+            <a href="#" style="width:38px;height:38px;border-radius:50%;display:grid;place-items:center;border:1px solid #ece1d1;color:#17120d;text-decoration:none;"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M6.94 7A1.94 1.94 0 1 1 7 3.1 1.94 1.94 0 0 1 6.94 7ZM5.3 9h3.3v11H5.3V9Zm5.2 0h3.16v1.5h.05c.44-.83 1.5-1.7 3.1-1.7 3.3 0 3.9 2.1 3.9 4.9V20h-3.3v-4.7c0-1.1 0-2.6-1.6-2.6s-1.85 1.2-1.85 2.5V20H10.5V9Z"/></svg></a>
+          </div>
+        </div>
+      </div>
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-top:22px;font-size:13.5px;color:#a79c8d;">
+        <span>&copy; 2026 JAM-Ready. Licensed &amp; insured.</span>
+        <div style="display:flex;gap:22px;">
+          <a href="#" style="color:#a79c8d;text-decoration:none;">Privacy</a>
+          <a href="#" style="color:#a79c8d;text-decoration:none;">Terms</a>
+          <a href="#" style="color:#a79c8d;text-decoration:none;">Warranty</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;proofStart&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;default&quot;:56,&quot;min&quot;:3,&quot;max&quot;:97,&quot;tsType&quot;:&quot;number&quot;}}">
+class Component extends DCLogic {
+  state = { pos: this.props.proofStart ?? 56 };
+
+  componentDidMount() {
+    this._dragging = false;
+    this._move = (e) => {
+      if (!this._dragging || !this._el) return;
+      if (e.cancelable && e.touches) e.preventDefault();
+      const r = this._el.getBoundingClientRect();
+      const x = e.touches ? e.touches[0].clientX : e.clientX;
+      let p = ((x - r.left) / r.width) * 100;
+      p = Math.max(3, Math.min(97, p));
+      this.setState({ pos: p });
+    };
+    this._up = () => { this._dragging = false; document.body.style.userSelect = ''; };
+    this._down = (e) => { this._dragging = true; document.body.style.userSelect = 'none'; this._move(e); };
+    window.addEventListener('mousemove', this._move);
+    window.addEventListener('mouseup', this._up);
+    window.addEventListener('touchmove', this._move, { passive: false });
+    window.addEventListener('touchend', this._up);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('mousemove', this._move);
+    window.removeEventListener('mouseup', this._up);
+    window.removeEventListener('touchmove', this._move);
+    window.removeEventListener('touchend', this._up);
+  }
+
+  renderVals() {
+    const pos = this.state.pos;
+    return {
+      sliderRef: (el) => { this._el = el; },
+      onSliderDown: (e) => this._down(e),
+      afterStyle: { position: 'absolute', inset: 0, clipPath: 'inset(0 0 0 ' + pos + '%)', overflow: 'hidden' },
+      handleStyle: { position: 'absolute', top: 0, bottom: 0, left: pos + '%', width: '3px', background: 'rgba(255,255,255,.9)', transform: 'translateX(-1.5px)', zIndex: 4, boxShadow: '0 0 0 1px rgba(20,12,4,.06)' }
+    };
+  }
+}
+</script>
+</body>
+</html>
