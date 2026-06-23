@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Camera, Check, MessageSquare, ShieldCheck, Star, Clock } from "lucide-react";
+import { Camera, Check, MessageSquare, ShieldCheck, Clock } from "lucide-react";
 import { CircleArrow } from "./Pieces";
 import { ProofSlider } from "./ProofSlider";
 import { site } from "@/lib/config";
@@ -22,8 +22,7 @@ export function Hero() {
         <h1 className="mt-6 text-[clamp(40px,5.1vw,70px)] font-extrabold leading-[.97] tracking-[-2px] text-ink text-balance">
           Rent-ready by your{" "}
           <span className="font-script text-[1.04em] text-accent">deadline</span>.
-          Proof the day it&rsquo;s{" "}
-          <span className="font-script text-[1.04em] text-ink">done</span>.
+          Proof the day it&rsquo;s done.
         </h1>
 
         <p className="mt-6 max-w-[480px] text-[17.5px] leading-relaxed text-ink-soft">
@@ -54,12 +53,10 @@ export function Hero() {
             insured
           </span>
           <span className="inline-flex items-center gap-2">
-            <Star size={17} className="fill-accent text-accent" />
-            <strong className="text-ink">{site.rating}</strong> on Google
+            <Clock size={17} className="text-accent" /> Free same-day quotes
           </span>
           <span className="inline-flex items-center gap-2">
-            <Clock size={17} className="text-accent" />
-            <strong className="text-ink">{site.stats.onTimeRate}</strong> on-time
+            <Check size={17} className="text-accent" /> No deposit to book
           </span>
         </div>
       </div>
@@ -91,8 +88,8 @@ export function Hero() {
             <Check size={16} className="text-white" strokeWidth={3} />
           </span>
           <span className="text-[13px] leading-tight">
-            <strong className="block text-ink">Owner approved</strong>
-            <span className="text-muted">photos delivered</span>
+            <strong className="block text-ink">Before &amp; after</strong>
+            <span className="text-muted">on every job</span>
           </span>
         </div>
 

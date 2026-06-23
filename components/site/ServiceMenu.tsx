@@ -34,9 +34,7 @@ export function ServiceMenu() {
             </span>
             <h2 className="mt-3.5 text-[clamp(30px,3.7vw,46px)] font-extrabold leading-[1.04] tracking-[-1.4px] text-ink">
               Everything a unit needs{" "}
-              <span className="font-script text-[1.06em] text-accent">
-                between tenants
-              </span>
+              <span className="text-accent">between tenants</span>
             </h2>
           </div>
           <p className="m-0 max-w-[330px] text-[15.5px] leading-relaxed text-ink-soft">

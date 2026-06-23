@@ -1,35 +1,16 @@
-import { Eye, Users, ArrowUpRight } from "lucide-react";
+import { Eye, Users, Clock, Camera, Wallet, CalendarCheck } from "lucide-react";
 import { PhotoSlot } from "./Pieces";
-import { site } from "@/lib/config";
-
-function CornerArrow({ accent = false }: { accent?: boolean }) {
-  return (
-    <span
-      className="absolute right-[18px] top-[18px] grid h-[34px] w-[34px] place-items-center rounded-full"
-      style={
-        accent
-          ? { background: "linear-gradient(180deg,#2ed3a6,#10a37a)", color: "#fff" }
-          : { border: "1px solid #d9e8e2", color: "#95aaa3" }
-      }
-    >
-      <ArrowUpRight size={14} strokeWidth={2} />
-    </span>
-  );
-}
 
 export function HowItWorks() {
   return (
     <section id="how" className="bg-canvas py-[90px]">
       <div className="mx-auto max-w-[1200px] px-6 sm:px-8">
-        <div className="mb-[46px] text-center">
+        <div className="mb-[46px] max-w-[640px]">
           <span className="text-[13.5px] font-bold uppercase tracking-[.4px] text-[#788c86]">
             Built for owners &amp; PMs
           </span>
-          <h2 className="mx-auto mt-3 max-w-[680px] text-[clamp(28px,3.5vw,44px)] font-extrabold leading-[1.06] tracking-[-1.4px] text-ink">
-            One crew that makes every turn{" "}
-            <span className="font-script text-[1.06em] text-accent">
-              simple &amp; on time
-            </span>
+          <h2 className="mt-3 text-[clamp(28px,3.5vw,44px)] font-extrabold leading-[1.06] tracking-[-1.4px] text-ink">
+            One crew that makes every turn simple and on time
           </h2>
         </div>
 
@@ -43,7 +24,7 @@ export function HowItWorks() {
               <PhotoSlot label="Finished-unit photo" />
               <div
                 className="absolute bottom-4 left-4 inline-flex items-center gap-2 rounded-[11px] px-3.5 py-2.5 text-[13px] font-semibold text-white"
-                style={{ background: "rgba(20,14,9,.74)", backdropFilter: "blur(6px)" }}
+                style={{ background: "rgba(14,42,38,.74)", backdropFilter: "blur(6px)" }}
               >
                 <span className="h-[7px] w-[7px] rounded-full bg-[#5ad27a]" /> Move-in
                 ready, signed off
@@ -63,12 +44,12 @@ export function HowItWorks() {
             </div>
           </div>
 
-          {/* right stats */}
+          {/* right: what you get (promises, not fabricated stats) */}
           <div className="grid grid-cols-2 gap-[18px]">
-            <StatCard value={site.stats.unitsTurned} label="Units turned" />
-            <StatCard value={site.stats.onTimeRate} label="Finished on time" />
-            <StatCard value={site.stats.avgTurnaround} label="Average turnaround" dark />
-            <StatCard value="100%" label="Photo-documented" />
+            <PromiseCard icon={CalendarCheck} title="Same-day quotes" body="Send photos, get a clear line-item price back the same day." />
+            <PromiseCard icon={Clock} title="1 to 3 day turns" body="Most units rent-ready in a few days, not weeks." />
+            <PromiseCard icon={Camera} title="Photo proof" body="Date-stamped before and after on every job." dark />
+            <PromiseCard icon={Wallet} title="No deposit" body="Pay after the unit is signed off and the photos are in." />
           </div>
         </div>
       </div>
@@ -102,34 +83,38 @@ function FeatureCard({
   );
 }
 
-function StatCard({
-  value,
-  label,
+function PromiseCard({
+  icon: Icon,
+  title,
+  body,
   dark = false,
 }: {
-  value: string;
-  label: string;
+  icon: React.ComponentType<{ size?: number }>;
+  title: string;
+  body: string;
   dark?: boolean;
 }) {
   return (
     <div
-      className="relative rounded-[20px] p-[26px]"
+      className="rounded-[20px] p-[22px]"
       style={
         dark
-          ? { background: "linear-gradient(165deg,#15564d,#0b2420)", border: "1px solid #07201d", boxShadow: "0 22px 44px -26px rgba(8,30,27,.5)" }
+          ? { background: "linear-gradient(165deg,#15564d,#0b2420)", border: "1px solid #082f2b", boxShadow: "0 22px 44px -26px rgba(8,30,27,.5)" }
           : { background: "#fff", border: "1px solid #d9e8e2", boxShadow: "0 16px 36px -28px rgba(8,30,27,.3)" }
       }
     >
-      <CornerArrow accent={dark} />
-      <div
-        className="mt-12 text-[40px] font-extrabold leading-none tracking-[-1.5px]"
-        style={{ color: dark ? "#fff" : "#0e2a26" }}
+      <span
+        className="grid h-11 w-11 place-items-center rounded-[13px]"
+        style={dark ? { background: "rgba(255,255,255,.12)", color: "#34d8ad" } : { background: "#e2f3ee", color: "#10a37a" }}
       >
-        {value}
-      </div>
-      <div className="mt-1 text-[14.5px]" style={{ color: dark ? "#a9bfb9" : "#6f827d" }}>
-        {label}
-      </div>
+        <Icon size={22} />
+      </span>
+      <h3 className="mb-1.5 mt-3.5 text-[16px] font-extrabold" style={{ color: dark ? "#fff" : "#0e2a26" }}>
+        {title}
+      </h3>
+      <p className="m-0 text-[13.5px] leading-relaxed" style={{ color: dark ? "#a9bfb9" : "#5a6b66" }}>
+        {body}
+      </p>
     </div>
   );
 }

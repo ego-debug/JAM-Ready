@@ -73,7 +73,7 @@ export default function PropertyManagersPage() {
             </span>
             <h1 className="mt-4 max-w-[820px] text-[clamp(32px,4.6vw,56px)] font-extrabold leading-[1.03] tracking-[-1.8px] text-ink">
               Make-ready built for{" "}
-              <span className="font-script text-[1.06em] text-accent">portfolios</span>
+              <span className="text-accent">portfolios</span>
             </h1>
             <p className="mt-4 max-w-[640px] text-lg leading-relaxed text-ink-soft">
               If you manage units, your turns need to be fast, documented, and

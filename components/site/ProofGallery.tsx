@@ -39,9 +39,7 @@ export function ProofGallery() {
         <div className="mb-[38px] flex flex-wrap items-end justify-between gap-6">
           <h2 className="m-0 text-[clamp(28px,3.5vw,44px)] font-extrabold leading-[1.05] tracking-[-1.4px] text-ink">
             Real turns,{" "}
-            <span className="font-script text-[1.06em] text-accent">
-              photo-documented
-            </span>
+            <span className="text-accent">photo-documented</span>
           </h2>
           <div className="flex items-center gap-3">
             <span className="w-[52px] text-[13.5px] font-semibold tabular-nums text-muted">

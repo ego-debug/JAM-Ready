@@ -19,9 +19,7 @@ export function CtaBand() {
           <div className="relative mx-auto max-w-[680px] text-center">
             <h2 className="m-0 text-[clamp(28px,3.4vw,44px)] font-extrabold leading-[1.05] tracking-[-1.4px] text-white">
               Turn the vacancy{" "}
-              <span className="font-script text-[1.06em] text-[#b9f0dd]">
-                into income
-              </span>
+              <span className="text-[#b9f0dd]">into income</span>
             </h2>
             <p className="mx-auto mb-[26px] mt-4 max-w-[520px] text-[16px] leading-relaxed text-white/80">
               Every day a unit sits empty is rent you don&rsquo;t get back. Book

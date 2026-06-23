@@ -6,7 +6,6 @@ import { HowItWorks } from "@/components/site/HowItWorks";
 import { CtaBand } from "@/components/site/CtaBand";
 import { ProofGallery } from "@/components/site/ProofGallery";
 import { Reviews } from "@/components/site/Reviews";
-import { Testimonials } from "@/components/site/Testimonials";
 import { Footer } from "@/components/site/Footer";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { localBusinessJsonLd } from "@/lib/seo";
@@ -32,7 +31,6 @@ export default function Home() {
         <CtaBand />
         <ProofGallery />
         <Reviews />
-        <Testimonials />
       </main>
       <Footer />
     </>
