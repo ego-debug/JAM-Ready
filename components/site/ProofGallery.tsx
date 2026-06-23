@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { PhotoSlot } from "./Pieces";
 
@@ -15,31 +15,67 @@ const proofs = [
 
 export function ProofGallery() {
   const track = useRef<HTMLDivElement>(null);
+  const paused = useRef(false);
   const [page, setPage] = useState(1);
+
+  function step() {
+    const el = track.current;
+    const card = el?.firstElementChild as HTMLElement | null;
+    return card ? card.offsetWidth + 20 : el?.clientWidth ?? 0;
+  }
 
   function update() {
     const el = track.current;
     if (!el) return;
-    const card = el.firstElementChild as HTMLElement | null;
-    const step = card ? card.offsetWidth + 20 : el.clientWidth;
-    setPage(Math.round(el.scrollLeft / step) + 1);
+    setPage(Math.round(el.scrollLeft / step()) + 1);
   }
 
-  function scrollBy(dir: number) {
+  function go(dir: number) {
     const el = track.current;
     if (!el) return;
-    const card = el.firstElementChild as HTMLElement | null;
-    const step = card ? card.offsetWidth + 20 : el.clientWidth;
-    el.scrollBy({ left: dir * step, behavior: "smooth" });
+    const atEnd = el.scrollLeft + el.clientWidth >= el.scrollWidth - 8;
+    if (dir > 0 && atEnd) {
+      el.scrollTo({ left: 0, behavior: "smooth" });
+    } else {
+      el.scrollBy({ left: dir * step(), behavior: "smooth" });
+    }
   }
+
+  // auto-advance, paused on hover / focus / touch / reduced-motion
+  useEffect(() => {
+    const el = track.current;
+    if (!el) return;
+    const pause = () => (paused.current = true);
+    const resume = () => (paused.current = false);
+    el.addEventListener("mouseenter", pause);
+    el.addEventListener("mouseleave", resume);
+    el.addEventListener("focusin", pause);
+    el.addEventListener("focusout", resume);
+    el.addEventListener("touchstart", pause, { passive: true });
+
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const id = reduce
+      ? undefined
+      : window.setInterval(() => {
+          if (!paused.current) go(1);
+        }, 3000);
+
+    return () => {
+      el.removeEventListener("mouseenter", pause);
+      el.removeEventListener("mouseleave", resume);
+      el.removeEventListener("focusin", pause);
+      el.removeEventListener("focusout", resume);
+      el.removeEventListener("touchstart", pause);
+      if (id) clearInterval(id);
+    };
+  }, []);
 
   return (
     <section id="proof" className="bg-surface pb-24">
       <div className="mx-auto max-w-[1200px] px-6 sm:px-8">
         <div className="mb-[38px] flex flex-wrap items-end justify-between gap-6">
           <h2 className="m-0 text-[clamp(28px,3.5vw,44px)] font-extrabold leading-[1.05] tracking-[-1.4px] text-ink">
-            Real turns,{" "}
-            <span className="text-accent">photo-documented</span>
+            Real turns, <span className="text-accent">photo-documented</span>
           </h2>
           <div className="flex items-center gap-3">
             <span className="w-[52px] text-[13.5px] font-semibold tabular-nums text-muted">
@@ -48,7 +84,7 @@ export function ProofGallery() {
             <button
               type="button"
               aria-label="Previous"
-              onClick={() => scrollBy(-1)}
+              onClick={() => go(-1)}
               className="grid h-[42px] w-[42px] place-items-center rounded-full text-ink transition hover:brightness-95"
               style={{ background: "#e6f4ef", border: "1px solid #d9e8e2" }}
             >
@@ -57,7 +93,7 @@ export function ProofGallery() {
             <button
               type="button"
               aria-label="Next"
-              onClick={() => scrollBy(1)}
+              onClick={() => go(1)}
               className="grid h-[42px] w-[42px] place-items-center rounded-full text-white transition hover:brightness-110"
               style={{ background: "linear-gradient(180deg,#15564d,#0b2420)" }}
             >
@@ -88,7 +124,7 @@ export function ProofGallery() {
                   AFTER
                 </span>
               </div>
-              <h4 className="mb-0 mt-4 text-[18px] font-bold text-ink">{p.title}</h4>
+              <h3 className="mb-0 mt-4 text-[18px] font-bold text-ink">{p.title}</h3>
               <p className="mt-1 text-[14px] text-muted">{p.meta}</p>
             </div>
           ))}
