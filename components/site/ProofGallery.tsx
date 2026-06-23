@@ -13,9 +13,13 @@ const proofs = [
   { slot: "Cleanout", title: "Move-out cleanout", meta: "Haul, scrub, punch list · 1 day" },
 ];
 
+// rendered twice so the strip can loop without a visible seam
+const loop = [...proofs, ...proofs];
+
 export function ProofGallery() {
   const track = useRef<HTMLDivElement>(null);
   const paused = useRef(false);
+  const hold = useRef(0);
   const [page, setPage] = useState(1);
 
   function step() {
@@ -27,21 +31,20 @@ export function ProofGallery() {
   function update() {
     const el = track.current;
     if (!el) return;
-    setPage(Math.round(el.scrollLeft / step()) + 1);
+    setPage((Math.round(el.scrollLeft / step()) % proofs.length) + 1);
   }
 
   function go(dir: number) {
     const el = track.current;
     if (!el) return;
-    const atEnd = el.scrollLeft + el.clientWidth >= el.scrollWidth - 8;
-    if (dir > 0 && atEnd) {
-      el.scrollTo({ left: 0, behavior: "smooth" });
-    } else {
-      el.scrollBy({ left: dir * step(), behavior: "smooth" });
-    }
+    // if going back from the start, hop forward into the duplicate set first
+    if (dir < 0 && el.scrollLeft < step()) el.scrollLeft += el.scrollWidth / 2;
+    // let the smooth scroll play out before the drift takes back over
+    hold.current = performance.now() + 700;
+    el.scrollBy({ left: dir * step(), behavior: "smooth" });
   }
 
-  // auto-advance, paused on hover / focus / touch / reduced-motion
+  // continuous drift, paused on hover / focus / touch / reduced-motion
   useEffect(() => {
     const el = track.current;
     if (!el) return;
@@ -52,13 +55,30 @@ export function ProofGallery() {
     el.addEventListener("focusin", pause);
     el.addEventListener("focusout", resume);
     el.addEventListener("touchstart", pause, { passive: true });
+    el.addEventListener("touchend", resume);
 
+    const node = el; // non-null alias so narrowing holds inside the closure
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    const id = reduce
-      ? undefined
-      : window.setInterval(() => {
-          if (!paused.current) go(1);
-        }, 3000);
+    const speed = 26; // pixels per second
+    let raf = 0;
+    let last = 0;
+    let pos = node.scrollLeft; // float accumulator (scrollLeft rounds sub-pixel steps away)
+
+    function tick(now: number) {
+      const half = node.scrollWidth / 2;
+      const holding = now < hold.current;
+      if (last && !paused.current && !holding) {
+        pos += (speed * (now - last)) / 1000;
+        if (pos >= half) pos -= half;
+        node.scrollLeft = pos;
+      } else {
+        pos = node.scrollLeft; // resync after hover, touch, or arrow nav
+      }
+      last = now;
+      raf = requestAnimationFrame(tick);
+    }
+
+    if (!reduce) raf = requestAnimationFrame(tick);
 
     return () => {
       el.removeEventListener("mouseenter", pause);
@@ -66,7 +86,8 @@ export function ProofGallery() {
       el.removeEventListener("focusin", pause);
       el.removeEventListener("focusout", resume);
       el.removeEventListener("touchstart", pause);
-      if (id) clearInterval(id);
+      el.removeEventListener("touchend", resume);
+      if (raf) cancelAnimationFrame(raf);
     };
   }, []);
 
@@ -105,12 +126,12 @@ export function ProofGallery() {
         <div
           ref={track}
           onScroll={update}
-          className="-mx-2 flex snap-x snap-mandatory gap-5 overflow-x-auto scroll-smooth px-2 pb-2 [scrollbar-width:none]"
+          className="-mx-2 flex gap-5 overflow-x-auto px-2 pb-2 [scrollbar-width:none]"
         >
-          {proofs.map((p) => (
+          {loop.map((p, i) => (
             <div
-              key={p.title}
-              className="shrink-0 basis-[82%] snap-start sm:basis-[calc((100%-1.25rem)/2)] lg:basis-[calc((100%-2.5rem)/3)]"
+              key={`${p.title}-${i}`}
+              className="shrink-0 basis-[82%] sm:basis-[calc((100%-1.25rem)/2)] lg:basis-[calc((100%-2.5rem)/3)]"
             >
               <div
                 className="relative h-[280px] overflow-hidden rounded-[20px]"
