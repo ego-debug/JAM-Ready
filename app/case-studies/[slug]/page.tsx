@@ -131,7 +131,7 @@ export default async function CaseStudyPage({
               const Icon = s.icon;
               return (
                 <div key={s.label} className="rounded-[18px] border border-line bg-surface p-5">
-                  <span className="inline-flex items-center gap-1.5 text-[13px] font-semibold uppercase tracking-wide text-muted">
+                  <span className="inline-flex items-center gap-1.5 text-[13px] font-semibold text-muted">
                     <Icon size={15} className="text-accent" /> {s.label}
                   </span>
                   <div className="mt-1.5 text-[16px] font-bold text-ink">{s.value}</div>

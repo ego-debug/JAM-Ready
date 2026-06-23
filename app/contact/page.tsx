@@ -78,11 +78,11 @@ export default function ContactPage() {
             {rows.map((r) => {
               const Icon = r.icon;
               return (
-                <a key={r.label} href={r.href} className="card-warm rounded-[20px] p-6 transition hover:-translate-y-0.5">
+                <a key={r.label} href={r.href} className="card-warm rounded-[20px] p-6 transition hover:border-accent/50">
                   <span className="grid h-11 w-11 place-items-center rounded-[14px] bg-brand-tint text-accent">
                     <Icon size={22} />
                   </span>
-                  <div className="mt-4 text-[13px] font-semibold uppercase tracking-wide text-muted">{r.label}</div>
+                  <div className="mt-4 text-[13px] font-semibold text-muted">{r.label}</div>
                   <div className="mt-1 text-[16px] font-bold text-ink">{r.value}</div>
                 </a>
               );

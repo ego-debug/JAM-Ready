@@ -29,7 +29,7 @@ export function ServiceMenu() {
       <div className="mx-auto max-w-[1200px] px-6 sm:px-8">
         <div className="mb-10 flex flex-wrap items-end justify-between gap-6">
           <div>
-            <span className="inline-flex items-center gap-2 text-[13.5px] font-bold uppercase tracking-[.4px] text-accent">
+            <span className="inline-flex items-center gap-2 text-[14px] font-bold text-accent">
               <Sparkles size={14} className="fill-accent" /> What we do
             </span>
             <h2 className="mt-3.5 text-[clamp(30px,3.7vw,46px)] font-extrabold leading-[1.04] tracking-[-1.4px] text-ink">

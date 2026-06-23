@@ -46,7 +46,7 @@ export default function ServicesIndexPage() {
               <Link
                 key={s.slug}
                 href={`/services/${s.slug}`}
-                className="card-warm group flex flex-col rounded-[22px] p-6 transition hover:-translate-y-0.5"
+                className="card-warm group flex flex-col rounded-[22px] p-6 transition hover:border-accent/50"
               >
                 <h2 className="font-display text-xl font-extrabold text-ink">
                   {s.name}

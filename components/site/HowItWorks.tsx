@@ -6,7 +6,7 @@ export function HowItWorks() {
     <section id="how" className="bg-canvas py-[90px]">
       <div className="mx-auto max-w-[1200px] px-6 sm:px-8">
         <div className="mb-[46px] max-w-[640px]">
-          <span className="text-[13.5px] font-bold uppercase tracking-[.4px] text-[#788c86]">
+          <span className="text-[14px] font-bold text-[#788c86]">
             Built for owners &amp; PMs
           </span>
           <h2 className="mt-3 text-[clamp(28px,3.5vw,44px)] font-extrabold leading-[1.06] tracking-[-1.4px] text-ink">

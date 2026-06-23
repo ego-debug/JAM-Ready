@@ -81,7 +81,7 @@ function LocationCard({
   return (
     <Link
       href={`/service-area/${slug}`}
-      className="card-warm group flex items-center justify-between gap-3 rounded-[18px] p-5 transition hover:-translate-y-0.5"
+      className="card-warm group flex items-center justify-between gap-3 rounded-[18px] p-5 transition hover:border-accent/50"
     >
       <span className="flex items-center gap-3">
         <span className="grid h-10 w-10 place-items-center rounded-xl bg-brand-tint text-accent">

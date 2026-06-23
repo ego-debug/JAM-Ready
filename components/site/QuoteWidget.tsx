@@ -123,7 +123,7 @@ export function QuoteWidget() {
 function Label({ text, children }: { text: string; children: React.ReactNode }) {
   return (
     <label className="block">
-      <span className="mb-[7px] block text-[12.5px] font-bold uppercase tracking-[.3px] text-[#7c8e89]">
+      <span className="mb-[7px] block text-[13px] font-semibold text-[#7c8e89]">
         {text}
       </span>
       {children}

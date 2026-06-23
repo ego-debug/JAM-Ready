@@ -46,7 +46,7 @@ export default function CaseStudiesIndex() {
               <Link
                 key={c.slug}
                 href={`/case-studies/${c.slug}`}
-                className="group overflow-hidden rounded-[22px] border border-line bg-surface transition hover:-translate-y-0.5 hover:shadow-[0_24px_50px_-30px_rgba(8,30,27,.4)]"
+                className="group overflow-hidden rounded-[22px] border border-line bg-surface transition hover:border-accent/50 hover:shadow-[0_24px_50px_-30px_rgba(8,30,27,.4)]"
               >
                 <div className="relative h-[200px]">
                   <PhotoSlot label="After photo" />

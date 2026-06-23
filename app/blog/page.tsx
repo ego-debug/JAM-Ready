@@ -47,7 +47,7 @@ export default function BlogIndexPage() {
               <Link
                 key={p.slug}
                 href={`/blog/${p.slug}`}
-                className="card-warm group flex flex-col rounded-[22px] p-6 transition hover:-translate-y-0.5"
+                className="card-warm group flex flex-col rounded-[22px] p-6 transition hover:border-accent/50"
               >
                 <div className="flex items-center gap-3 text-xs text-muted">
                   <span>{formatPostDate(p.date)}</span>

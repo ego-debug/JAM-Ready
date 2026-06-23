@@ -129,7 +129,7 @@ export default async function BlogPostPage({
               <h2 className="font-display text-xl font-extrabold text-ink">Keep reading</h2>
               <div className="mt-4 grid gap-4 sm:grid-cols-2">
                 {more.map((p) => (
-                  <Link key={p.slug} href={`/blog/${p.slug}`} className="card-warm rounded-[18px] p-5 transition hover:-translate-y-0.5">
+                  <Link key={p.slug} href={`/blog/${p.slug}`} className="card-warm rounded-[18px] p-5 transition hover:border-accent/50">
                     <h3 className="text-[16px] font-bold leading-snug text-ink">{p.title}</h3>
                     <p className="mt-2 text-[14px] leading-relaxed text-ink-soft">{p.excerpt}</p>
                   </Link>
