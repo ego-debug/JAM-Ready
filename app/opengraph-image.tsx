@@ -23,14 +23,14 @@ export default function Image() {
           flexDirection: "column",
           justifyContent: "space-between",
           padding: "72px",
-          background: "linear-gradient(135deg,#f1f8f5 0%,#d7f0e6 55%,#a9e6d2 100%)",
+          background: "linear-gradient(135deg,#f4faf8 0%,#d7f0e6 55%,#a9e6d2 100%)",
           fontFamily: "sans-serif",
         }}
       >
         <div style={{ display: "flex", alignItems: "center", gap: "20px" }}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src={logo} width="84" height="84" alt="" />
-          <div style={{ fontSize: "40px", fontWeight: 800, color: "#0e2a26" }}>
+          <div style={{ fontSize: "40px", fontWeight: 800, color: "#182421" }}>
             {site.name}
           </div>
         </div>
@@ -40,7 +40,7 @@ export default function Image() {
             style={{
               fontSize: "78px",
               fontWeight: 800,
-              color: "#0e2a26",
+              color: "#182421",
               lineHeight: 1.04,
               letterSpacing: "-2px",
               maxWidth: "920px",
@@ -64,7 +64,7 @@ export default function Image() {
                   padding: "12px 22px",
                   borderRadius: "999px",
                   background: "rgba(255,255,255,.72)",
-                  color: "#0e2a26",
+                  color: "#182421",
                   fontSize: "24px",
                   fontWeight: 600,
                 }}

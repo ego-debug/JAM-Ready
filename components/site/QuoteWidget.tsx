@@ -15,8 +15,8 @@ const bedOptions = [
 
 const fieldBox = "flex items-center gap-2.5 rounded-[13px] bg-white px-4 py-[13px]";
 const fieldStyle = {
-  border: "1px solid #d9e8e2",
-  boxShadow: "inset 0 1px 2px rgba(8,30,27,.04)",
+  border: "1px solid #d9eae3",
+  boxShadow: "inset 0 1px 2px rgba(24,36,33,.04)",
 } as const;
 
 export function QuoteWidget() {
@@ -36,7 +36,7 @@ export function QuoteWidget() {
   return (
     <section
       id="quote"
-      style={{ background: "linear-gradient(180deg,#f1f8f5 0%,#ffffff 55%)" }}
+      style={{ background: "linear-gradient(180deg,#f4faf8 0%,#ffffff 55%)" }}
     >
       <div className="mx-auto max-w-[1080px] -translate-y-12 px-6 sm:-translate-y-[78px] sm:px-8">
         <div
@@ -47,7 +47,7 @@ export function QuoteWidget() {
             backdropFilter: "blur(22px)",
             border: "1px solid rgba(255,255,255,.7)",
             boxShadow:
-              "inset 0 1px 0 rgba(255,255,255,.85),0 40px 80px -34px rgba(8,30,27,.4)",
+              "inset 0 1px 0 rgba(255,255,255,.85),0 40px 80px -34px rgba(24,36,33,.4)",
           }}
         >
           <div className="mb-[18px] flex flex-wrap items-center justify-between gap-3">
@@ -63,7 +63,7 @@ export function QuoteWidget() {
           <div className="grid items-end gap-3.5 md:grid-cols-[1.5fr_1fr_1fr_auto]">
             <Label text="Unit address">
               <div className={fieldBox} style={fieldStyle}>
-                <MapPin size={17} className="shrink-0 text-[#a4bbb3]" />
+                <MapPin size={17} className="shrink-0 text-[#a6bdb6]" />
                 <input
                   value={address}
                   onChange={(e) => setAddress(e.target.value)}
@@ -79,7 +79,7 @@ export function QuoteWidget() {
                   value={beds}
                   onChange={(e) => setBeds(e.target.value)}
                   className="w-full appearance-none bg-transparent text-[15px] font-semibold text-ink outline-none"
-                  style={{ color: beds ? "#0e2a26" : "#889b95" }}
+                  style={{ color: beds ? "#182421" : "#889b95" }}
                 >
                   {bedOptions.map((o) => (
                     <option key={o.value} value={o.value}>
@@ -87,7 +87,7 @@ export function QuoteWidget() {
                     </option>
                   ))}
                 </select>
-                <ChevronDown size={15} className="pointer-events-none shrink-0 text-[#95aaa3]" />
+                <ChevronDown size={15} className="pointer-events-none shrink-0 text-[#94aaa3]" />
               </div>
             </Label>
 
@@ -99,7 +99,7 @@ export function QuoteWidget() {
                   onChange={(e) => setDue(e.target.value)}
                   className="w-full bg-transparent text-[15px] font-semibold text-ink outline-none"
                 />
-                <Calendar size={16} className="pointer-events-none shrink-0 text-[#95aaa3]" />
+                <Calendar size={16} className="pointer-events-none shrink-0 text-[#94aaa3]" />
               </div>
             </Label>
 
@@ -109,7 +109,7 @@ export function QuoteWidget() {
               className="btn-orange inline-flex items-center justify-center gap-3 rounded-[13px] py-[13px] pl-6 pr-[13px] text-[16px] font-semibold"
             >
               Get my quote
-              <span className="grid h-[34px] w-[34px] place-items-center rounded-full bg-white/90 text-[#0c8466]">
+              <span className="grid h-[34px] w-[34px] place-items-center rounded-full bg-white/90 text-[#169d82]">
                 <ArrowRight size={14} strokeWidth={2.3} />
               </span>
             </button>

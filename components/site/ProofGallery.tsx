@@ -86,7 +86,7 @@ export function ProofGallery() {
               aria-label="Previous"
               onClick={() => go(-1)}
               className="grid h-[42px] w-[42px] place-items-center rounded-full text-ink transition hover:brightness-95"
-              style={{ background: "#e6f4ef", border: "1px solid #d9e8e2" }}
+              style={{ background: "#ecf6f2", border: "1px solid #d9eae3" }}
             >
               <ArrowLeft size={16} strokeWidth={2.2} />
             </button>
@@ -95,7 +95,7 @@ export function ProofGallery() {
               aria-label="Next"
               onClick={() => go(1)}
               className="grid h-[42px] w-[42px] place-items-center rounded-full text-white transition hover:brightness-110"
-              style={{ background: "linear-gradient(180deg,#15564d,#0b2420)" }}
+              style={{ background: "linear-gradient(180deg,#11574b,#0a2c26)" }}
             >
               <ArrowRight size={16} strokeWidth={2.2} />
             </button>
@@ -114,12 +114,12 @@ export function ProofGallery() {
             >
               <div
                 className="relative h-[280px] overflow-hidden rounded-[20px]"
-                style={{ border: "1px solid #d9e8e2", boxShadow: "0 22px 46px -30px rgba(8,30,27,.4)" }}
+                style={{ border: "1px solid #d9eae3", boxShadow: "0 22px 46px -30px rgba(24,36,33,.4)" }}
               >
                 <PhotoSlot label={p.slot} />
                 <span
                   className="absolute left-3.5 top-3.5 rounded-lg px-2.5 py-1.5 text-[12px] font-bold text-white"
-                  style={{ background: "rgba(16,163,122,.92)" }}
+                  style={{ background: "rgba(29,186,154,.92)" }}
                 >
                   AFTER
                 </span>

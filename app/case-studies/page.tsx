@@ -22,7 +22,7 @@ export default function CaseStudiesIndex() {
       <main>
         <div
           className="-mt-[84px] pt-[84px]"
-          style={{ background: "linear-gradient(180deg,#e2f3ee 0%,#f1f8f5 70%,#f1f8f5 100%)" }}
+          style={{ background: "linear-gradient(180deg,#e7f6f1 0%,#f4faf8 70%,#f4faf8 100%)" }}
         >
           <Container className="max-w-[1000px] py-12 sm:py-16">
             <nav className="flex items-center gap-1.5 text-sm text-muted">
@@ -46,13 +46,13 @@ export default function CaseStudiesIndex() {
               <Link
                 key={c.slug}
                 href={`/case-studies/${c.slug}`}
-                className="group overflow-hidden rounded-[22px] border border-line bg-surface transition hover:border-accent/50 hover:shadow-[0_24px_50px_-30px_rgba(8,30,27,.4)]"
+                className="group overflow-hidden rounded-[22px] border border-line bg-surface transition hover:border-accent/50 hover:shadow-[0_24px_50px_-30px_rgba(24,36,33,.4)]"
               >
                 <div className="relative h-[200px]">
                   <PhotoSlot label="After photo" />
                   <span
                     className="absolute left-3.5 top-3.5 rounded-lg px-2.5 py-1.5 text-[12px] font-bold text-white"
-                    style={{ background: "rgba(16,163,122,.92)" }}
+                    style={{ background: "rgba(29,186,154,.92)" }}
                   >
                     AFTER
                   </span>

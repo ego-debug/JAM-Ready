@@ -74,7 +74,7 @@ export default async function CaseStudyPage({
       <main>
         <div
           className="-mt-[84px] pt-[84px]"
-          style={{ background: "linear-gradient(180deg,#e2f3ee 0%,#f1f8f5 70%,#f1f8f5 100%)" }}
+          style={{ background: "linear-gradient(180deg,#e7f6f1 0%,#f4faf8 70%,#f4faf8 100%)" }}
         >
           <Container className="max-w-[900px] py-12 sm:py-16">
             <nav className="flex items-center gap-1.5 text-sm text-muted">
@@ -111,12 +111,12 @@ export default async function CaseStudyPage({
               <div key={label}>
                 <div
                   className="relative h-[260px] overflow-hidden rounded-[20px]"
-                  style={{ border: "1px solid #d9e8e2" }}
+                  style={{ border: "1px solid #d9eae3" }}
                 >
                   <PhotoSlot label={`${label} photo`} />
                   <span
                     className="absolute left-3.5 top-3.5 rounded-lg px-2.5 py-1.5 text-[12px] font-bold text-white"
-                    style={{ background: label === "After" ? "rgba(16,163,122,.92)" : "rgba(14,42,38,.78)" }}
+                    style={{ background: label === "After" ? "rgba(29,186,154,.92)" : "rgba(14,42,38,.78)" }}
                   >
                     {label.toUpperCase()}
                   </span>

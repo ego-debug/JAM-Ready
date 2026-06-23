@@ -234,7 +234,7 @@ export function RequestForm({ initial }: { initial?: RequestInitial }) {
                   value={s}
                   checked={active}
                   onChange={() => toggleService(s)}
-                  className="h-4 w-4 accent-[#10a37a]"
+                  className="h-4 w-4 accent-[#1dba9a]"
                 />
                 {s}
               </label>
@@ -253,7 +253,7 @@ export function RequestForm({ initial }: { initial?: RequestInitial }) {
                   key={t}
                   className="inline-flex cursor-pointer items-center gap-2 rounded-full border border-line bg-surface px-3.5 py-1.5 text-sm font-medium text-ink"
                 >
-                  <input type="checkbox" name="flooringTypes" value={t} className="h-3.5 w-3.5 accent-[#10a37a]" />
+                  <input type="checkbox" name="flooringTypes" value={t} className="h-3.5 w-3.5 accent-[#1dba9a]" />
                   {t}
                 </label>
               ))}
@@ -279,7 +279,7 @@ export function RequestForm({ initial }: { initial?: RequestInitial }) {
                   key={t}
                   className="inline-flex cursor-pointer items-center gap-2 rounded-full border border-line bg-surface px-3.5 py-1.5 text-sm font-medium text-ink"
                 >
-                  <input type="checkbox" name="paintingScope" value={t} className="h-3.5 w-3.5 accent-[#10a37a]" />
+                  <input type="checkbox" name="paintingScope" value={t} className="h-3.5 w-3.5 accent-[#1dba9a]" />
                   {t}
                 </label>
               ))}

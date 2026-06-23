@@ -33,7 +33,7 @@ export function Footer() {
       <div className="mx-auto max-w-[1200px] px-6 sm:px-8">
         <div
           className="grid gap-8 pb-10 md:grid-cols-[1.4fr_1fr_1fr_1fr]"
-          style={{ borderBottom: "1px solid #d9e8e2" }}
+          style={{ borderBottom: "1px solid #d9eae3" }}
         >
           <div>
             <Link href="/" className="mb-4 inline-flex">

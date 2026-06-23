@@ -19,9 +19,11 @@ export function Logo({
         priority
         className="h-10 w-10"
       />
-      <span className="text-[21px] font-extrabold leading-none tracking-[-0.5px]">
-        <span className={onDark ? "text-white" : "text-ink"}>JAM</span>
-        <span className="text-accent"> Ready</span>
+      <span className="text-[21px] leading-none tracking-[-0.5px]">
+        <span className={cn("font-display font-extrabold", onDark ? "text-white" : "text-ink")}>
+          JAM
+        </span>
+        <span className="font-medium text-accent"> Ready</span>
       </span>
     </span>
   );

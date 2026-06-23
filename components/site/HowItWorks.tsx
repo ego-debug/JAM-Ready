@@ -19,7 +19,7 @@ export function HowItWorks() {
           <div className="grid gap-[18px]">
             <div
               className="relative h-[280px] overflow-hidden rounded-[22px]"
-              style={{ border: "1px solid #d9e8e2", boxShadow: "0 24px 50px -30px rgba(8,30,27,.4)" }}
+              style={{ border: "1px solid #d9eae3", boxShadow: "0 24px 50px -30px rgba(24,36,33,.4)" }}
             >
               <PhotoSlot label="Finished-unit photo" />
               <div
@@ -69,11 +69,11 @@ function FeatureCard({
   return (
     <div
       className="rounded-[20px] bg-surface p-[22px]"
-      style={{ border: "1px solid #d9e8e2", boxShadow: "0 16px 36px -28px rgba(8,30,27,.3)" }}
+      style={{ border: "1px solid #d9eae3", boxShadow: "0 16px 36px -28px rgba(24,36,33,.3)" }}
     >
       <span
         className="grid h-[42px] w-[42px] place-items-center rounded-full text-ink"
-        style={{ background: "#e6f4ef", border: "1px solid #d9e8e2" }}
+        style={{ background: "#ecf6f2", border: "1px solid #d9eae3" }}
       >
         <Icon size={20} />
       </span>
@@ -99,20 +99,20 @@ function PromiseCard({
       className="rounded-[20px] p-[22px]"
       style={
         dark
-          ? { background: "linear-gradient(165deg,#15564d,#0b2420)", border: "1px solid #082f2b", boxShadow: "0 22px 44px -26px rgba(8,30,27,.5)" }
-          : { background: "#fff", border: "1px solid #d9e8e2", boxShadow: "0 16px 36px -28px rgba(8,30,27,.3)" }
+          ? { background: "linear-gradient(165deg,#11574b,#0a2c26)", border: "1px solid #082f2b", boxShadow: "0 22px 44px -26px rgba(24,36,33,.5)" }
+          : { background: "#fff", border: "1px solid #d9eae3", boxShadow: "0 16px 36px -28px rgba(24,36,33,.3)" }
       }
     >
       <span
         className="grid h-11 w-11 place-items-center rounded-[13px]"
-        style={dark ? { background: "rgba(255,255,255,.12)", color: "#34d8ad" } : { background: "#e2f3ee", color: "#10a37a" }}
+        style={dark ? { background: "rgba(255,255,255,.12)", color: "#45dcc0" } : { background: "#e7f6f1", color: "#1dba9a" }}
       >
         <Icon size={22} />
       </span>
-      <h3 className="mb-1.5 mt-3.5 text-[16px] font-extrabold" style={{ color: dark ? "#fff" : "#0e2a26" }}>
+      <h3 className="mb-1.5 mt-3.5 text-[16px] font-extrabold" style={{ color: dark ? "#fff" : "#182421" }}>
         {title}
       </h3>
-      <p className="m-0 text-[13.5px] leading-relaxed" style={{ color: dark ? "#a9bfb9" : "#5a6b66" }}>
+      <p className="m-0 text-[13.5px] leading-relaxed" style={{ color: dark ? "#a7c0b9" : "#5a6b66" }}>
         {body}
       </p>
     </div>

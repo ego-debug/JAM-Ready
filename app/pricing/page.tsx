@@ -36,7 +36,7 @@ export default function PricingPage() {
       <main>
         <div
           className="-mt-[84px] pt-[84px]"
-          style={{ background: "linear-gradient(180deg,#e2f3ee 0%,#f1f8f5 60%,#f1f8f5 100%)" }}
+          style={{ background: "linear-gradient(180deg,#e7f6f1 0%,#f4faf8 60%,#f4faf8 100%)" }}
         >
           <Container className="max-w-[900px] py-12 sm:py-16">
             <nav className="flex items-center gap-1.5 text-sm text-muted">

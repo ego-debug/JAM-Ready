@@ -4,14 +4,14 @@ import { cn } from "@/lib/utils";
 type ArrowTone = "white" | "orange" | "dark" | "ghost";
 
 const arrowBg: Record<ArrowTone, React.CSSProperties> = {
-  white: { background: "linear-gradient(180deg,#fff,#d9e8e2)", color: "#0e2a26" },
+  white: { background: "linear-gradient(180deg,#fff,#d9eae3)", color: "#182421" },
   orange: {
-    background: "linear-gradient(180deg,#2ed3a6,#10a37a 60%,#0c8466)",
+    background: "linear-gradient(180deg,#45dcc0,#1dba9a 60%,#169d82)",
     color: "#fff",
     boxShadow: "inset 0 1px 0 rgba(255,255,255,.5)",
   },
-  dark: { background: "linear-gradient(180deg,#15564d,#0b2420)", color: "#fff" },
-  ghost: { background: "#e6f4ef", color: "#0e2a26", border: "1px solid #d9e8e2" },
+  dark: { background: "linear-gradient(180deg,#11574b,#0a2c26)", color: "#fff" },
+  ghost: { background: "#ecf6f2", color: "#182421", border: "1px solid #d9eae3" },
 };
 
 /** The circular arrow badge that sits inside pill buttons and on cards. */
@@ -56,10 +56,10 @@ export function PhotoSlot({
           "linear-gradient(150deg,#d9f0ea 0%,#c3e9dd 45%,#aee0cf 100%)",
       }}
     >
-      <span className="grid h-11 w-11 place-items-center rounded-full bg-white/70 text-[#10a37a]">
+      <span className="grid h-11 w-11 place-items-center rounded-full bg-white/70 text-[#1dba9a]">
         <ImageIcon size={20} />
       </span>
-      <span className="px-4 text-sm font-semibold text-[#0c6b54]">{label}</span>
+      <span className="px-4 text-sm font-semibold text-[#0e5e4f]">{label}</span>
     </div>
   );
 }

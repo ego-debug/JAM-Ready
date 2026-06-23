@@ -9,11 +9,11 @@ export function Hero() {
     <div className="mx-auto grid max-w-[1200px] items-center gap-10 px-6 pb-28 pt-8 sm:px-8 lg:grid-cols-[1.04fr_.96fr] lg:gap-14 lg:pb-[150px] lg:pt-12">
       <div>
         <span
-          className="inline-flex items-center gap-2.5 rounded-full py-2 pl-3 pr-4 text-sm font-semibold text-[#0c6b54]"
+          className="inline-flex items-center gap-2.5 rounded-full py-2 pl-3 pr-4 text-sm font-semibold text-[#0e5e4f]"
           style={{
             background: "rgba(255,255,255,.7)",
             border: "1px solid rgba(255,255,255,.85)",
-            boxShadow: "inset 0 1px 0 #fff,0 6px 16px -12px rgba(8,30,27,.4)",
+            boxShadow: "inset 0 1px 0 #fff,0 6px 16px -12px rgba(24,36,33,.4)",
           }}
         >
           <Camera size={16} className="text-accent" /> Photo-proof on every turn
@@ -21,7 +21,7 @@ export function Hero() {
 
         <h1 className="mt-6 text-[clamp(40px,5.1vw,70px)] font-extrabold leading-[.97] tracking-[-2px] text-ink text-balance">
           Rent-ready by your{" "}
-          <span className="font-script text-[1.04em] text-accent">deadline</span>.
+          <span className="text-accent">deadline</span>.
           Proof the day it&rsquo;s done.
         </h1>
 
@@ -66,9 +66,9 @@ export function Hero() {
         <div
           className="rounded-[30px] p-[9px]"
           style={{
-            background: "linear-gradient(155deg,#34d8ad,#10a37a 52%,#0b7257)",
+            background: "linear-gradient(155deg,#45dcc0,#1dba9a 52%,#0f917a)",
             boxShadow:
-              "inset 0 1px 0 rgba(255,255,255,.45),0 44px 72px -32px rgba(12,132,102,.55),0 12px 34px -16px rgba(8,30,27,.45)",
+              "inset 0 1px 0 rgba(255,255,255,.45),0 44px 72px -32px rgba(15,145,122,.55),0 12px 34px -16px rgba(24,36,33,.45)",
           }}
         >
           <ProofSlider />
@@ -77,8 +77,8 @@ export function Hero() {
         <div
           className="animate-float absolute right-1 -top-4 inline-flex items-center gap-2.5 rounded-[14px] bg-white px-4 py-[11px] sm:-right-2"
           style={{
-            border: "1px solid #dcebe5",
-            boxShadow: "0 18px 40px -16px rgba(8,30,27,.4)",
+            border: "1px solid #dceee7",
+            boxShadow: "0 18px 40px -16px rgba(24,36,33,.4)",
           }}
         >
           <span
