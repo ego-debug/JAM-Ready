@@ -13,10 +13,9 @@ export function CtaStrip({
 }) {
   return (
     <div
-      className="relative overflow-hidden rounded-[28px] px-8 py-12 text-center sm:px-12"
+      className="relative overflow-hidden rounded-3xl px-8 py-12 text-center sm:px-12"
       style={{
         background: "linear-gradient(135deg,#0a2c26 0%,#0f6b5b 58%,#1dba9a 130%)",
-        boxShadow: "0 40px 80px -36px rgba(24,36,33,.5)",
       }}
     >
       <div

@@ -23,7 +23,7 @@ export default function BlogIndexPage() {
       <main>
         <div
           className="-mt-[84px] pt-[84px]"
-          style={{ background: "linear-gradient(180deg,#e7f6f1 0%,#f4faf8 70%,#f4faf8 100%)" }}
+          style={{ background: "linear-gradient(180deg,#e7f6f1 0%,#faf6ef 70%,#faf6ef 100%)" }}
         >
           <Container className="max-w-[1000px] py-12 sm:py-16">
             <nav className="flex items-center gap-1.5 text-sm text-muted">
@@ -41,13 +41,14 @@ export default function BlogIndexPage() {
           </Container>
         </div>
 
+        <div className="bg-cream">
         <Container className="max-w-[1000px] py-14">
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {posts.map((p) => (
               <Link
                 key={p.slug}
                 href={`/blog/${p.slug}`}
-                className="card-warm group flex flex-col rounded-[22px] p-6 transition hover:border-accent/50"
+                className="group flex flex-col rounded-2xl border border-line bg-surface p-6 transition hover:border-accent/50"
               >
                 <div className="flex items-center gap-3 text-xs text-muted">
                   <span>{formatPostDate(p.date)}</span>
@@ -73,6 +74,7 @@ export default function BlogIndexPage() {
             <CtaStrip />
           </div>
         </Container>
+        </div>
       </main>
       <Footer />
     </>

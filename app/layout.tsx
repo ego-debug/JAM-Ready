@@ -4,7 +4,7 @@ import { site } from "@/lib/config";
 import { SITE_URL } from "@/lib/seo";
 import { Analytics } from "@/components/seo/Analytics";
 
-const defaultTitle = `${site.name} | Rent-ready by your deadline`;
+const defaultTitle = `${site.name} | Apartment Make-Ready & Turnovers, Cherry Hill NJ`;
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -50,7 +50,7 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body className="min-h-full flex flex-col bg-canvas text-ink">
+      <body className="min-h-full flex flex-col bg-cream text-ink">
         <Analytics />
         {children}
       </body>

@@ -1,23 +1,21 @@
-import { Hammer, PaintRoller, SprayCan, Wrench, Sparkles } from "lucide-react";
-
 const services = [
   {
-    icon: Hammer,
+    n: "01",
     title: "Patch & repair",
     body: "Holes, dents, nail pops and caulk lines, filled, sanded and blended smooth.",
   },
   {
-    icon: PaintRoller,
+    n: "02",
     title: "Paint & touch-up",
     body: "Fresh coats or precision touch-ups in the right sheen and color match.",
   },
   {
-    icon: SprayCan,
+    n: "03",
     title: "Deep clean",
     body: "Floors, fixtures, appliances and glass brought to move-in spotless.",
   },
   {
-    icon: Wrench,
+    n: "04",
     title: "Fixtures & hardware",
     body: "Like-for-like faucet, tub and shower fixture swaps, plus locks, blinds, and hardware.",
   },
@@ -25,14 +23,14 @@ const services = [
 
 export function ServiceMenu() {
   return (
-    <section id="services" className="bg-surface pb-24 pt-[18px]">
+    <section id="services" className="bg-cream pb-24 pt-20">
       <div className="mx-auto max-w-[1200px] px-6 sm:px-8">
-        <div className="mb-10 flex flex-wrap items-end justify-between gap-6">
-          <div>
-            <span className="inline-flex items-center gap-2 text-[14px] font-bold text-accent">
-              <Sparkles size={14} className="fill-accent" /> What we do
+        <div className="mb-12 flex flex-wrap items-end justify-between gap-6">
+          <div className="max-w-[640px]">
+            <span className="inline-flex items-center gap-3 text-[14px] font-semibold text-accent">
+              <span className="h-px w-8 bg-accent/50" /> What we do
             </span>
-            <h2 className="mt-3.5 text-[clamp(30px,3.7vw,46px)] font-extrabold leading-[1.04] tracking-[-1.4px] text-ink">
+            <h2 className="mt-4 text-[clamp(30px,3.7vw,46px)] font-extrabold leading-[1.04] tracking-[-1.4px] text-ink">
               Everything a unit needs{" "}
               <span className="text-accent">between tenants</span>
             </h2>
@@ -43,29 +41,23 @@ export function ServiceMenu() {
           </p>
         </div>
 
-        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          {services.map((s) => {
-            const Icon = s.icon;
-            return (
-              <div key={s.title} className="card-warm rounded-[22px] p-[26px]">
-                <span
-                  className="grid h-[50px] w-[50px] place-items-center rounded-[15px] text-accent-hover"
-                  style={{
-                    background: "linear-gradient(180deg,#d6f3ea,#b6e8d8)",
-                    boxShadow: "inset 0 1px 0 #fff",
-                  }}
-                >
-                  <Icon size={24} />
-                </span>
-                <h3 className="mb-2 mt-[18px] text-[19px] font-extrabold tracking-[-.4px] text-ink">
-                  {s.title}
-                </h3>
-                <p className="m-0 text-[14.5px] leading-[1.55] text-[#5f716c]">
-                  {s.body}
-                </p>
-              </div>
-            );
-          })}
+        <div className="grid gap-y-10 border-t border-line pt-10 sm:grid-cols-2 lg:grid-cols-4 lg:gap-y-0">
+          {services.map((s) => (
+            <div
+              key={s.title}
+              className="lg:border-l lg:border-line lg:pl-8 lg:pr-6 lg:first:border-l-0 lg:first:pl-0"
+            >
+              <span className="font-display text-[15px] font-bold tabular-nums text-accent">
+                {s.n}
+              </span>
+              <h3 className="mt-5 text-[20px] font-extrabold tracking-[-.4px] text-ink">
+                {s.title}
+              </h3>
+              <p className="mt-2.5 text-[14.5px] leading-[1.6] text-ink-soft">
+                {s.body}
+              </p>
+            </div>
+          ))}
         </div>
       </div>
     </section>

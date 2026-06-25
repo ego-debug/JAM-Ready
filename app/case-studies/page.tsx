@@ -22,7 +22,7 @@ export default function CaseStudiesIndex() {
       <main>
         <div
           className="-mt-[84px] pt-[84px]"
-          style={{ background: "linear-gradient(180deg,#e7f6f1 0%,#f4faf8 70%,#f4faf8 100%)" }}
+          style={{ background: "linear-gradient(180deg,#e7f6f1 0%,#faf6ef 70%,#faf6ef 100%)" }}
         >
           <Container className="max-w-[1000px] py-12 sm:py-16">
             <nav className="flex items-center gap-1.5 text-sm text-muted">
@@ -40,13 +40,14 @@ export default function CaseStudiesIndex() {
           </Container>
         </div>
 
+        <div className="bg-cream">
         <Container className="max-w-[1000px] py-14">
           <div className="grid gap-6 sm:grid-cols-2">
             {CASE_STUDIES.map((c) => (
               <Link
                 key={c.slug}
                 href={`/case-studies/${c.slug}`}
-                className="group overflow-hidden rounded-[22px] border border-line bg-surface transition hover:border-accent/50 hover:shadow-[0_24px_50px_-30px_rgba(24,36,33,.4)]"
+                className="group overflow-hidden rounded-2xl border border-line bg-surface transition hover:border-accent/50"
               >
                 <div className="relative h-[200px]">
                   <PhotoSlot label="After photo" />
@@ -82,6 +83,7 @@ export default function CaseStudiesIndex() {
             <CtaStrip />
           </div>
         </Container>
+        </div>
       </main>
       <Footer />
     </>

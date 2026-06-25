@@ -20,7 +20,7 @@ export default function Home() {
           className="-mt-[84px] pt-[84px]"
           style={{
             background:
-              "radial-gradient(125% 130% at 88% -10%,#6fdcc0 0%,#c2eee2 24%,#eaf7f2 52%,#f4faf8 100%)",
+              "radial-gradient(125% 130% at 88% -10%,#6fdcc0 0%,#c2eee2 24%,#eaf7f2 52%,#faf6ef 100%)",
           }}
         >
           <Hero />

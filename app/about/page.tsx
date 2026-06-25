@@ -27,7 +27,7 @@ export default function AboutPage() {
       <main>
         <div
           className="-mt-[84px] pt-[84px]"
-          style={{ background: "linear-gradient(180deg,#e7f6f1 0%,#f4faf8 60%,#f4faf8 100%)" }}
+          style={{ background: "linear-gradient(180deg,#e7f6f1 0%,#faf6ef 60%,#faf6ef 100%)" }}
         >
           <Container className="max-w-[900px] py-12 sm:py-16">
             <nav className="flex items-center gap-1.5 text-sm text-muted">
@@ -47,46 +47,58 @@ export default function AboutPage() {
           </Container>
         </div>
 
-        <Container className="max-w-[900px] py-14">
-          <div className="max-w-[680px] space-y-4 text-[16px] leading-relaxed text-ink-soft">
-            <p>
-              Most turnover work is done by scattered handymen or an overworked
-              in-house maintenance team, and it shows: missed dates, no
-              documentation, and units that sit empty losing rent. We built{" "}
-              {site.name} to fix that for owners and property managers across
-              South Jersey.
-            </p>
-            <p>
-              Every turn runs on a hard finish date and ends with a set of
-              before and after photos in your inbox. That is the whole promise.
-              It keeps your vacancy days low and makes your owner reports
-              effortless.
-            </p>
-          </div>
+        <div className="bg-cream">
+          <Container className="max-w-[900px] py-14">
+            <div className="max-w-[680px] space-y-4 text-[16px] leading-relaxed text-ink-soft">
+              <p>
+                Most turnover work is done by scattered handymen or an overworked
+                in-house maintenance team, and it shows: missed dates, no
+                documentation, and units that sit empty losing rent. We built{" "}
+                {site.name} to fix that for owners and property managers across
+                South Jersey.
+              </p>
+              <p>
+                Every turn runs on a hard finish date and ends with a set of
+                before and after photos in your inbox. That is the whole promise.
+                It keeps your vacancy days low and makes your owner reports
+                effortless.
+              </p>
+            </div>
+          </Container>
+        </div>
 
-          <div className="mt-12 grid gap-5 sm:grid-cols-2">
-            {values.map((v) => {
-              const Icon = v.icon;
-              return (
-                <div key={v.title} className="card-warm rounded-[20px] p-6">
-                  <span className="grid h-11 w-11 place-items-center rounded-[14px] bg-brand-tint text-accent">
-                    <Icon size={22} />
-                  </span>
-                  <h3 className="mb-2 mt-4 text-[18px] font-extrabold text-ink">
-                    {v.title}
-                  </h3>
-                  <p className="m-0 text-[14.5px] leading-relaxed text-ink-soft">
-                    {v.body}
-                  </p>
-                </div>
-              );
-            })}
-          </div>
+        <div className="bg-cream">
+          <Container className="max-w-[900px] py-14">
+            <div className="grid grid-cols-1 overflow-hidden rounded-2xl border border-line sm:grid-cols-2">
+              {values.map((v, i) => {
+                const Icon = v.icon;
+                const edges = [
+                  "max-sm:border-b sm:border-r sm:border-b",
+                  "max-sm:border-b sm:border-b",
+                  "max-sm:border-b sm:border-r",
+                  "",
+                ][i];
+                return (
+                  <div key={v.title} className={"border-line p-6 " + edges}>
+                    <Icon size={22} strokeWidth={1.75} className="text-accent" />
+                    <h3 className="mt-3.5 text-[18px] font-extrabold text-ink">
+                      {v.title}
+                    </h3>
+                    <p className="mt-1.5 text-[14.5px] leading-relaxed text-ink-soft">
+                      {v.body}
+                    </p>
+                  </div>
+                );
+              })}
+            </div>
+          </Container>
+        </div>
 
-          <div className="mt-14">
+        <div className="bg-cream">
+          <Container className="max-w-[900px] py-14">
             <CtaStrip />
-          </div>
-        </Container>
+          </Container>
+        </div>
       </main>
       <Footer />
     </>

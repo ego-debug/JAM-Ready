@@ -29,7 +29,7 @@ const cols = [
 
 export function Footer() {
   return (
-    <footer className="mt-auto bg-surface px-0 pb-[30px] pt-16">
+    <footer className="mt-auto bg-cream px-0 pb-[30px] pt-16">
       <div className="mx-auto max-w-[1200px] px-6 sm:px-8">
         <div
           className="grid gap-8 pb-10 md:grid-cols-[1.4fr_1fr_1fr_1fr]"
@@ -97,7 +97,6 @@ export function Footer() {
           <div className="flex gap-[22px]">
             <Link href="/privacy" className="text-[#889b95] no-underline hover:text-ink">Privacy</Link>
             <Link href="/terms" className="text-[#889b95] no-underline hover:text-ink">Terms</Link>
-            <Link href="/warranty" className="text-[#889b95] no-underline hover:text-ink">Warranty</Link>
           </div>
         </div>
       </div>

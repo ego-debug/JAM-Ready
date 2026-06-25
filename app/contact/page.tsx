@@ -50,7 +50,7 @@ export default function ContactPage() {
       <main>
         <div
           className="-mt-[84px] pt-[84px]"
-          style={{ background: "linear-gradient(180deg,#e7f6f1 0%,#f4faf8 60%,#f4faf8 100%)" }}
+          style={{ background: "linear-gradient(180deg,#e7f6f1 0%,#faf6ef 60%,#faf6ef 100%)" }}
         >
           <Container className="max-w-[900px] py-12 sm:py-16">
             <nav className="flex items-center gap-1.5 text-sm text-muted">
@@ -73,37 +73,38 @@ export default function ContactPage() {
           </Container>
         </div>
 
+        <div className="bg-cream">
         <Container className="max-w-[900px] py-14">
-          <div className="grid gap-5 sm:grid-cols-3">
+          <div className="grid gap-y-10 border-t border-line pt-10 sm:grid-cols-2 lg:grid-cols-3 lg:gap-y-0">
             {rows.map((r) => {
               const Icon = r.icon;
               return (
-                <a key={r.label} href={r.href} className="card-warm rounded-[20px] p-6 transition hover:border-accent/50">
-                  <span className="grid h-11 w-11 place-items-center rounded-[14px] bg-brand-tint text-accent">
-                    <Icon size={22} />
-                  </span>
+                <a
+                  key={r.label}
+                  href={r.href}
+                  className="group lg:border-l lg:border-line lg:pl-8 lg:pr-6 lg:first:border-l-0 lg:first:pl-0"
+                >
+                  <Icon size={22} strokeWidth={1.75} className="text-accent" />
                   <div className="mt-4 text-[13px] font-semibold text-muted">{r.label}</div>
-                  <div className="mt-1 text-[16px] font-bold text-ink">{r.value}</div>
+                  <div className="mt-1 text-[16px] font-bold text-ink group-hover:text-accent">{r.value}</div>
                 </a>
               );
             })}
           </div>
 
-          <div className="mt-6 grid gap-5 sm:grid-cols-2">
-            <div className="rounded-[20px] border border-line bg-surface p-6">
-              <span className="inline-flex items-center gap-2 text-[15px] font-bold text-ink">
-                <MapPin size={18} className="text-accent" /> Where we work
-              </span>
+          <div className="mt-12 grid grid-cols-1 overflow-hidden rounded-2xl border border-line sm:grid-cols-2">
+            <div className="border-line p-6 max-sm:border-b sm:border-r">
+              <MapPin size={22} strokeWidth={1.75} className="text-accent" />
+              <h3 className="mt-3.5 text-[15px] font-bold text-ink">Where we work</h3>
               <p className="mt-2 text-[14.5px] leading-relaxed text-ink-soft">
                 Based in Cherry Hill, NJ. We serve Camden, Burlington, and
                 Gloucester counties across South Jersey. See all{" "}
                 <Link href="/service-area" className="text-accent underline">service areas</Link>.
               </p>
             </div>
-            <div className="rounded-[20px] border border-line bg-surface p-6">
-              <span className="inline-flex items-center gap-2 text-[15px] font-bold text-ink">
-                <Clock size={18} className="text-accent" /> Hours
-              </span>
+            <div className="border-line p-6">
+              <Clock size={22} strokeWidth={1.75} className="text-accent" />
+              <h3 className="mt-3.5 text-[15px] font-bold text-ink">Hours</h3>
               <p className="mt-2 text-[14.5px] leading-relaxed text-ink-soft">
                 Crews dispatched Monday to Saturday, 8am to 6pm. Send a request
                 any time and we will reply the same day.
@@ -111,6 +112,7 @@ export default function ContactPage() {
             </div>
           </div>
         </Container>
+        </div>
       </main>
       <Footer />
     </>

@@ -21,7 +21,7 @@ export default function ServicesIndexPage() {
       <main>
         <div
           className="-mt-[84px] pt-[84px]"
-          style={{ background: "linear-gradient(180deg,#e7f6f1 0%,#f4faf8 60%,#f4faf8 100%)" }}
+          style={{ background: "linear-gradient(180deg,#e7f6f1 0%,#faf6ef 60%,#faf6ef 100%)" }}
         >
           <Container className="max-w-[1100px] py-12 sm:py-16">
             <nav className="flex items-center gap-1.5 text-sm text-muted">
@@ -40,32 +40,34 @@ export default function ServicesIndexPage() {
           </Container>
         </div>
 
-        <Container className="max-w-[1100px] py-14">
-          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {SERVICE_PAGES.map((s) => (
-              <Link
-                key={s.slug}
-                href={`/services/${s.slug}`}
-                className="card-warm group flex flex-col rounded-[22px] p-6 transition hover:border-accent/50"
-              >
-                <h2 className="font-display text-xl font-extrabold text-ink">
-                  {s.name}
-                </h2>
-                <p className="mt-2 flex-1 text-[14.5px] leading-relaxed text-ink-soft">
-                  {s.intro}
-                </p>
-                <span className="mt-4 inline-flex items-center gap-1.5 text-[14.5px] font-semibold text-accent">
-                  See what&rsquo;s included
-                  <ArrowRight size={15} className="transition-transform group-hover:translate-x-0.5" />
-                </span>
-              </Link>
-            ))}
-          </div>
+        <section className="bg-cream">
+          <Container className="max-w-[1100px] py-14">
+            <div className="grid gap-y-10 border-t border-line pt-10 sm:grid-cols-2 lg:grid-cols-3 lg:gap-y-0">
+              {SERVICE_PAGES.map((s) => (
+                <Link
+                  key={s.slug}
+                  href={`/services/${s.slug}`}
+                  className="group flex flex-col lg:border-l lg:border-line lg:pl-8 lg:pr-6 lg:first:border-l-0 lg:first:pl-0"
+                >
+                  <h2 className="font-display text-xl font-extrabold text-ink">
+                    {s.name}
+                  </h2>
+                  <p className="mt-2 flex-1 text-[14.5px] leading-relaxed text-ink-soft">
+                    {s.intro}
+                  </p>
+                  <span className="mt-4 inline-flex items-center gap-1.5 text-[14.5px] font-semibold text-accent">
+                    See what&rsquo;s included
+                    <ArrowRight size={15} className="transition-transform group-hover:translate-x-0.5" />
+                  </span>
+                </Link>
+              ))}
+            </div>
 
-          <div className="mt-14">
-            <CtaStrip />
-          </div>
-        </Container>
+            <div className="mt-14">
+              <CtaStrip />
+            </div>
+          </Container>
+        </section>
       </main>
       <Footer />
     </>

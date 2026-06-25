@@ -17,6 +17,8 @@
   --color-brand-tint: #e7f6f1;
   --color-dark: #122c27;
   --color-cream: #faf6ef;
+  --color-cream-warm: #f5efe1;
+  --color-cream-cool: #f1f4ee;
 
   --color-accent: #1dba9a;
   --color-accent-hover: #169d82;
@@ -43,7 +45,7 @@ html {
 
 body {
   margin: 0;
-  background: var(--color-canvas);
+  background: var(--color-cream);
   color: var(--color-ink);
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;

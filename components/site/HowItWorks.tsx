@@ -1,120 +1,80 @@
 import { Eye, Users, Clock, Camera, Wallet, CalendarCheck } from "lucide-react";
 import { PhotoSlot } from "./Pieces";
 
+const features = [
+  { icon: Eye, title: "Our promise", body: "Hit the deadline or we eat the rush. Every turn documented end to end." },
+  { icon: Users, title: "Our crew", body: "Background-checked, uniformed, and trained on the make-ready checklist." },
+];
+
+const promises = [
+  { icon: CalendarCheck, title: "Same-day quotes", body: "Send photos, get a clear line-item price back the same day." },
+  { icon: Clock, title: "1 to 3 day turns", body: "Most units rent-ready in a few days, not weeks." },
+  { icon: Camera, title: "Photo proof", body: "Date-stamped before and after on every job." },
+  { icon: Wallet, title: "No deposit", body: "Pay after the unit is signed off and the photos are in." },
+];
+
 export function HowItWorks() {
   return (
-    <section id="how" className="bg-canvas py-[90px]">
+    <section id="how" className="bg-cream-warm py-[90px]">
       <div className="mx-auto max-w-[1200px] px-6 sm:px-8">
-        <div className="mb-[46px] max-w-[640px]">
-          <span className="text-[14px] font-bold text-[#788c86]">
-            Built for owners &amp; PMs
+        <div className="mb-12 max-w-[640px]">
+          <span className="inline-flex items-center gap-3 text-[14px] font-semibold text-accent">
+            <span className="h-px w-8 bg-accent/50" /> Built for owners &amp; PMs
           </span>
-          <h2 className="mt-3 text-[clamp(28px,3.5vw,44px)] font-extrabold leading-[1.06] tracking-[-1.4px] text-ink">
+          <h2 className="mt-4 text-[clamp(28px,3.5vw,44px)] font-extrabold leading-[1.06] tracking-[-1.4px] text-ink">
             One crew that makes every turn simple and on time
           </h2>
         </div>
 
-        <div className="grid gap-[22px] lg:grid-cols-[1.15fr_1fr]">
-          {/* left feature */}
-          <div className="grid gap-[18px]">
-            <div
-              className="relative h-[280px] overflow-hidden rounded-[22px]"
-              style={{ border: "1px solid #d9eae3", boxShadow: "0 24px 50px -30px rgba(24,36,33,.4)" }}
-            >
+        <div className="grid gap-6 lg:grid-cols-[1.15fr_1fr]">
+          {/* left: photo + two features */}
+          <div className="grid gap-6">
+            <div className="relative h-[280px] overflow-hidden rounded-2xl border border-line">
               <PhotoSlot label="Finished-unit photo" />
               <div
-                className="absolute bottom-4 left-4 inline-flex items-center gap-2 rounded-[11px] px-3.5 py-2.5 text-[13px] font-semibold text-white"
+                className="absolute bottom-4 left-4 inline-flex items-center gap-2 rounded-xl px-3.5 py-2.5 text-[13px] font-semibold text-white"
                 style={{ background: "rgba(14,42,38,.74)", backdropFilter: "blur(6px)" }}
               >
                 <span className="h-[7px] w-[7px] rounded-full bg-[#5ad27a]" /> Move-in
                 ready, signed off
               </div>
             </div>
-            <div className="grid gap-[18px] sm:grid-cols-2">
-              <FeatureCard
-                icon={Eye}
-                title="Our promise"
-                body="Hit the deadline or we eat the rush. Every turn documented end to end."
-              />
-              <FeatureCard
-                icon={Users}
-                title="Our crew"
-                body="Background-checked, uniformed, and trained on the make-ready checklist."
-              />
+            <div className="grid overflow-hidden rounded-2xl border border-line sm:grid-cols-2">
+              {features.map((f, i) => {
+                const Icon = f.icon;
+                return (
+                  <div
+                    key={f.title}
+                    className={
+                      "border-line p-6 " +
+                      (i === 0 ? "max-sm:border-b sm:border-r" : "")
+                    }
+                  >
+                    <Icon size={22} strokeWidth={1.75} className="text-accent" />
+                    <h4 className="mt-3.5 text-[16.5px] font-extrabold text-ink">{f.title}</h4>
+                    <p className="mt-1.5 text-[13.5px] leading-[1.5] text-ink-soft">{f.body}</p>
+                  </div>
+                );
+              })}
             </div>
           </div>
 
-          {/* right: what you get (promises, not fabricated stats) */}
-          <div className="grid grid-cols-2 gap-[18px]">
-            <PromiseCard icon={CalendarCheck} title="Same-day quotes" body="Send photos, get a clear line-item price back the same day." />
-            <PromiseCard icon={Clock} title="1 to 3 day turns" body="Most units rent-ready in a few days, not weeks." />
-            <PromiseCard icon={Camera} title="Photo proof" body="Date-stamped before and after on every job." dark />
-            <PromiseCard icon={Wallet} title="No deposit" body="Pay after the unit is signed off and the photos are in." />
+          {/* right: promises, one panel split by hairlines */}
+          <div className="grid grid-cols-2 overflow-hidden rounded-2xl border border-line">
+            {promises.map((p, i) => {
+              const Icon = p.icon;
+              const edges = ["border-r border-b", "border-b", "border-r", ""][i];
+              return (
+                <div key={p.title} className={"border-line p-6 " + edges}>
+                  <Icon size={22} strokeWidth={1.75} className="text-accent" />
+                  <h3 className="mt-3.5 text-[16px] font-extrabold text-ink">{p.title}</h3>
+                  <p className="mt-1.5 text-[13.5px] leading-relaxed text-ink-soft">{p.body}</p>
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>
     </section>
-  );
-}
-
-function FeatureCard({
-  icon: Icon,
-  title,
-  body,
-}: {
-  icon: React.ComponentType<{ size?: number }>;
-  title: string;
-  body: string;
-}) {
-  return (
-    <div
-      className="rounded-[20px] bg-surface p-[22px]"
-      style={{ border: "1px solid #d9eae3", boxShadow: "0 16px 36px -28px rgba(24,36,33,.3)" }}
-    >
-      <span
-        className="grid h-[42px] w-[42px] place-items-center rounded-full text-ink"
-        style={{ background: "#ecf6f2", border: "1px solid #d9eae3" }}
-      >
-        <Icon size={20} />
-      </span>
-      <h4 className="mb-1.5 mt-3.5 text-[16.5px] font-extrabold text-ink">{title}</h4>
-      <p className="m-0 text-[13.5px] leading-[1.5] text-[#5f716c]">{body}</p>
-    </div>
-  );
-}
-
-function PromiseCard({
-  icon: Icon,
-  title,
-  body,
-  dark = false,
-}: {
-  icon: React.ComponentType<{ size?: number }>;
-  title: string;
-  body: string;
-  dark?: boolean;
-}) {
-  return (
-    <div
-      className="rounded-[20px] p-[22px]"
-      style={
-        dark
-          ? { background: "linear-gradient(165deg,#11574b,#0a2c26)", border: "1px solid #082f2b", boxShadow: "0 22px 44px -26px rgba(24,36,33,.5)" }
-          : { background: "#fff", border: "1px solid #d9eae3", boxShadow: "0 16px 36px -28px rgba(24,36,33,.3)" }
-      }
-    >
-      <span
-        className="grid h-11 w-11 place-items-center rounded-[13px]"
-        style={dark ? { background: "rgba(255,255,255,.12)", color: "#45dcc0" } : { background: "#e7f6f1", color: "#1dba9a" }}
-      >
-        <Icon size={22} />
-      </span>
-      <h3 className="mb-1.5 mt-3.5 text-[16px] font-extrabold" style={{ color: dark ? "#fff" : "#182421" }}>
-        {title}
-      </h3>
-      <p className="m-0 text-[13.5px] leading-relaxed" style={{ color: dark ? "#a7c0b9" : "#5a6b66" }}>
-        {body}
-      </p>
-    </div>
   );
 }

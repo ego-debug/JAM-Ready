@@ -22,7 +22,6 @@ const staticPaths = [
   "/blog",
   "/privacy",
   "/terms",
-  "/warranty",
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

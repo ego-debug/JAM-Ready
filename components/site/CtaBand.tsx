@@ -1,15 +1,19 @@
 import Link from "next/link";
 import { ClipboardList, CreditCard, ArrowRight } from "lucide-react";
 
+const banners = [
+  { icon: ClipboardList, title: "Know the scope up front", body: "A line-item walkthrough quote before we lift a brush. No surprise add-ons." },
+  { icon: CreditCard, title: "Pay after sign-off", body: "Invoice lands with the after-photos. Net terms for managed portfolios." },
+];
+
 export function CtaBand() {
   return (
-    <section className="bg-surface pb-[90px]">
+    <section className="bg-cream pb-[90px]">
       <div className="mx-auto max-w-[1200px] px-6 sm:px-8">
         <div
-          className="relative overflow-hidden rounded-[28px] px-8 pb-[30px] pt-16 sm:px-12"
+          className="relative overflow-hidden rounded-3xl px-8 pb-[30px] pt-16 sm:px-12"
           style={{
             background: "linear-gradient(135deg,#0a2c26 0%,#0f6b5b 58%,#1dba9a 130%)",
-            boxShadow: "0 40px 80px -36px rgba(24,36,33,.5)",
           }}
         >
           <div
@@ -44,43 +48,26 @@ export function CtaBand() {
             </Link>
           </div>
 
-          <div className="relative mt-[46px] grid gap-[18px] sm:grid-cols-2">
-            <BannerCard
-              icon={ClipboardList}
-              title="Know the scope up front"
-              body="A line-item walkthrough quote before we lift a brush. No surprise add-ons."
-            />
-            <BannerCard
-              icon={CreditCard}
-              title="Pay after sign-off"
-              body="Invoice lands with the after-photos. Net terms for managed portfolios."
-            />
+          <div className="relative mt-[46px] grid overflow-hidden rounded-2xl bg-white/95 sm:grid-cols-2">
+            {banners.map((b, i) => {
+              const Icon = b.icon;
+              return (
+                <div
+                  key={b.title}
+                  className={
+                    "px-6 py-6 " +
+                    (i === 0 ? "border-line max-sm:border-b sm:border-r" : "")
+                  }
+                >
+                  <Icon size={22} strokeWidth={1.75} className="text-accent" />
+                  <h4 className="mt-3.5 text-[17px] font-extrabold text-ink">{b.title}</h4>
+                  <p className="mt-1.5 text-[14px] leading-[1.5] text-ink-soft">{b.body}</p>
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>
     </section>
-  );
-}
-
-function BannerCard({
-  icon: Icon,
-  title,
-  body,
-}: {
-  icon: React.ComponentType<{ size?: number; className?: string }>;
-  title: string;
-  body: string;
-}) {
-  return (
-    <div
-      className="rounded-[18px] px-6 py-[22px]"
-      style={{ background: "rgba(255,255,255,.96)", boxShadow: "0 18px 40px -22px rgba(0,0,0,.4)" }}
-    >
-      <span className="grid h-10 w-10 place-items-center rounded-full bg-ink text-white">
-        <Icon size={20} />
-      </span>
-      <h4 className="mb-1.5 mt-3.5 text-[17px] font-extrabold text-ink">{title}</h4>
-      <p className="m-0 text-[14px] leading-[1.5] text-[#5f716c]">{body}</p>
-    </div>
   );
 }

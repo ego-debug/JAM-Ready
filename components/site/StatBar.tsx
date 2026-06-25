@@ -10,7 +10,7 @@ const stats = [
 
 export function StatBar() {
   return (
-    <section className="border-y border-line bg-surface">
+    <section className="border-y border-line bg-cream">
       <Container className="grid grid-cols-2 gap-px overflow-hidden md:grid-cols-4">
         {stats.map((s) => (
           <div key={s.label} className="px-2 py-8 text-center">

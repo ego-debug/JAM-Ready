@@ -33,7 +33,7 @@ export default function FaqPage() {
       <main>
         <div
           className="-mt-[84px] pt-[84px]"
-          style={{ background: "linear-gradient(180deg,#e7f6f1 0%,#f4faf8 60%,#f4faf8 100%)" }}
+          style={{ background: "linear-gradient(180deg,#e7f6f1 0%,#faf6ef 60%,#faf6ef 100%)" }}
         >
           <Container className="max-w-[820px] py-12 sm:py-16">
             <nav className="flex items-center gap-1.5 text-sm text-muted">
@@ -50,20 +50,22 @@ export default function FaqPage() {
           </Container>
         </div>
 
-        <Container className="max-w-[820px] py-14">
-          <div className="divide-y divide-line rounded-[20px] border border-line bg-surface">
-            {SITE_FAQS.map((f) => (
-              <div key={f.q} className="p-6">
-                <h2 className="text-[17px] font-bold text-ink">{f.q}</h2>
-                <p className="mt-2 text-[15.5px] leading-relaxed text-ink-soft">{f.a}</p>
-              </div>
-            ))}
-          </div>
+        <div className="bg-cream">
+          <Container className="max-w-[820px] py-14">
+            <div className="divide-y divide-line rounded-3xl border border-line bg-surface">
+              {SITE_FAQS.map((f) => (
+                <div key={f.q} className="p-6">
+                  <h2 className="text-[17px] font-bold text-ink">{f.q}</h2>
+                  <p className="mt-2 text-[15.5px] leading-relaxed text-ink-soft">{f.a}</p>
+                </div>
+              ))}
+            </div>
 
-          <div className="mt-14">
-            <CtaStrip />
-          </div>
-        </Container>
+            <div className="mt-14">
+              <CtaStrip />
+            </div>
+          </Container>
+        </div>
       </main>
       <Footer />
     </>

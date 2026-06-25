@@ -79,7 +79,7 @@ export default async function BlogPostPage({
       <main>
         <div
           className="-mt-[84px] pt-[84px]"
-          style={{ background: "linear-gradient(180deg,#e7f6f1 0%,#f4faf8 70%,#f4faf8 100%)" }}
+          style={{ background: "linear-gradient(180deg,#e7f6f1 0%,#faf6ef 70%,#faf6ef 100%)" }}
         >
           <Container className="max-w-[760px] py-12 sm:py-16">
             <nav className="flex items-center gap-1.5 text-sm text-muted">
@@ -129,7 +129,7 @@ export default async function BlogPostPage({
               <h2 className="font-display text-xl font-extrabold text-ink">Keep reading</h2>
               <div className="mt-4 grid gap-4 sm:grid-cols-2">
                 {more.map((p) => (
-                  <Link key={p.slug} href={`/blog/${p.slug}`} className="card-warm rounded-[18px] p-5 transition hover:border-accent/50">
+                  <Link key={p.slug} href={`/blog/${p.slug}`} className="rounded-2xl border border-line bg-surface p-5 transition hover:border-accent/50">
                     <h3 className="text-[16px] font-bold leading-snug text-ink">{p.title}</h3>
                     <p className="mt-2 text-[14px] leading-relaxed text-ink-soft">{p.excerpt}</p>
                   </Link>

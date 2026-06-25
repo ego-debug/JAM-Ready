@@ -22,7 +22,7 @@ export default function NotFound() {
       <main>
         <div
           className="-mt-[84px] pt-[84px]"
-          style={{ background: "linear-gradient(180deg,#e7f6f1 0%,#f4faf8 70%,#f4faf8 100%)" }}
+          style={{ background: "linear-gradient(180deg,#e7f6f1 0%,#faf6ef 70%,#faf6ef 100%)" }}
         >
           <Container className="flex min-h-[60vh] max-w-[760px] flex-col items-center justify-center py-20 text-center">
             <span className="font-display text-[5rem] font-extrabold leading-none text-accent">

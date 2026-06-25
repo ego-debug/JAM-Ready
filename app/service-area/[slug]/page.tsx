@@ -106,7 +106,7 @@ export default async function LocationPage({
       <main>
         <div
           className="-mt-[84px] pt-[84px]"
-          style={{ background: "linear-gradient(180deg,#e7f6f1 0%,#f4faf8 60%,#f4faf8 100%)" }}
+          style={{ background: "linear-gradient(180deg,#e7f6f1 0%,#faf6ef 60%,#faf6ef 100%)" }}
         >
           <Container className="max-w-[900px] py-12 sm:py-16">
             <nav className="flex items-center gap-1.5 text-sm text-muted">
@@ -116,8 +116,8 @@ export default async function LocationPage({
               <ChevronRight size={14} />
               <span className="text-ink-soft">{l.name}</span>
             </nav>
-            <span className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-accent">
-              <MapPin size={15} /> {l.region}
+            <span className="mt-5 inline-flex items-center gap-3 text-[14px] font-semibold text-accent">
+              <span className="h-px w-8 bg-accent/50" /> {l.region}
             </span>
             <h1 className="mt-2 max-w-[760px] text-[clamp(32px,4.4vw,52px)] font-extrabold leading-[1.04] tracking-[-1.6px] text-ink">
               {h1}
@@ -137,9 +137,11 @@ export default async function LocationPage({
           <p className="max-w-[680px] text-[16px] leading-relaxed text-ink-soft">
             {l.detail}
           </p>
+        </Container>
 
-          {/* services */}
-          <div className="mt-12">
+        {/* services */}
+        <section className="bg-cream">
+          <Container className="max-w-[900px] py-14">
             <h2 className="font-display text-2xl font-extrabold text-ink">
               What we turn in {l.name}
             </h2>
@@ -148,23 +150,23 @@ export default async function LocationPage({
                 <Link
                   key={s.slug}
                   href={`/services/${s.slug}`}
-                  className="flex items-center gap-2.5 rounded-xl border border-line bg-surface px-4 py-3 text-[15px] font-semibold text-ink transition hover:border-accent/40 hover:bg-brand-tint/30"
+                  className="flex items-center gap-2.5 rounded-2xl border border-line bg-surface px-4 py-3 text-[15px] font-semibold text-ink transition hover:border-accent/40"
                 >
-                  <span className="grid h-5 w-5 shrink-0 place-items-center rounded-full bg-success/15 text-success">
-                    <Check size={13} strokeWidth={3} />
-                  </span>
+                  <Check size={18} strokeWidth={2.5} className="shrink-0 text-accent" />
                   {s.name}
                 </Link>
               ))}
             </div>
-          </div>
+          </Container>
+        </section>
 
+        <Container className="max-w-[900px] py-14">
           {/* FAQ */}
-          <div className="mt-12">
+          <div>
             <h2 className="font-display text-2xl font-extrabold text-ink">
               {l.name} make-ready FAQ
             </h2>
-            <div className="mt-5 divide-y divide-line rounded-[20px] border border-line bg-surface">
+            <div className="mt-5 divide-y divide-line rounded-2xl border border-line bg-surface">
               {faqs.map((f) => (
                 <div key={f.q} className="p-5">
                   <h3 className="text-[16px] font-bold text-ink">{f.q}</h3>

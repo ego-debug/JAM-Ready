@@ -89,7 +89,7 @@ export default async function ServicePage({
         {/* hero */}
         <div
           className="-mt-[84px] pt-[84px]"
-          style={{ background: "linear-gradient(180deg,#e7f6f1 0%,#f4faf8 60%,#f4faf8 100%)" }}
+          style={{ background: "linear-gradient(180deg,#e7f6f1 0%,#faf6ef 60%,#faf6ef 100%)" }}
         >
           <Container className="max-w-[900px] py-12 sm:py-16">
             <nav className="flex items-center gap-1.5 text-sm text-muted">
@@ -127,15 +127,13 @@ export default async function ServicePage({
               <ul className="mt-5 grid gap-3 sm:grid-cols-2">
                 {s.includes.map((item) => (
                   <li key={item} className="flex items-start gap-2.5">
-                    <span className="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full bg-success/15 text-success">
-                      <Check size={13} strokeWidth={3} />
-                    </span>
+                    <Check size={18} strokeWidth={2.5} className="mt-0.5 shrink-0 text-accent" />
                     <span className="text-[15px] text-ink-soft">{item}</span>
                   </li>
                 ))}
               </ul>
             </div>
-            <div className="card-warm rounded-[20px] p-6">
+            <div className="rounded-2xl border border-line bg-surface p-6">
               <h3 className="font-display text-lg font-extrabold text-ink">
                 Why it matters
               </h3>
@@ -150,7 +148,7 @@ export default async function ServicePage({
             <h2 className="font-display text-2xl font-extrabold text-ink">
               Common questions
             </h2>
-            <div className="mt-5 divide-y divide-line rounded-[20px] border border-line bg-surface">
+            <div className="mt-5 divide-y divide-line rounded-2xl border border-line bg-surface">
               {s.faqs.map((f) => (
                 <div key={f.q} className="p-5">
                   <h3 className="text-[16px] font-bold text-ink">{f.q}</h3>

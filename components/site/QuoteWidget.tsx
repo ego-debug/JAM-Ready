@@ -13,7 +13,7 @@ const bedOptions = [
   { value: "4", label: "4+ bedrooms" },
 ];
 
-const fieldBox = "flex items-center gap-2.5 rounded-[13px] bg-white px-4 py-[13px]";
+const fieldBox = "flex items-center gap-2.5 rounded-xl bg-white px-4 py-[13px]";
 const fieldStyle = {
   border: "1px solid #d9eae3",
   boxShadow: "inset 0 1px 2px rgba(24,36,33,.04)",
@@ -34,21 +34,11 @@ export function QuoteWidget() {
   }
 
   return (
-    <section
-      id="quote"
-      style={{ background: "linear-gradient(180deg,#f4faf8 0%,#ffffff 55%)" }}
-    >
+    <section id="quote" className="bg-cream">
       <div className="mx-auto max-w-[1080px] -translate-y-12 px-6 sm:-translate-y-[78px] sm:px-8">
         <div
-          className="rounded-[26px] p-[22px]"
-          style={{
-            background:
-              "linear-gradient(180deg,rgba(255,255,255,.72),rgba(255,255,255,.5))",
-            backdropFilter: "blur(22px)",
-            border: "1px solid rgba(255,255,255,.7)",
-            boxShadow:
-              "inset 0 1px 0 rgba(255,255,255,.85),0 40px 80px -34px rgba(24,36,33,.4)",
-          }}
+          className="rounded-3xl border border-line bg-surface p-[22px]"
+          style={{ boxShadow: "0 24px 60px -34px rgba(24,36,33,.28)" }}
         >
           <div className="mb-[18px] flex flex-wrap items-center justify-between gap-3">
             <h2 className="text-[17px] font-extrabold text-ink">

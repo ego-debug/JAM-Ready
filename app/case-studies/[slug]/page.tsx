@@ -74,7 +74,7 @@ export default async function CaseStudyPage({
       <main>
         <div
           className="-mt-[84px] pt-[84px]"
-          style={{ background: "linear-gradient(180deg,#e7f6f1 0%,#f4faf8 70%,#f4faf8 100%)" }}
+          style={{ background: "linear-gradient(180deg,#e7f6f1 0%,#faf6ef 70%,#faf6ef 100%)" }}
         >
           <Container className="max-w-[900px] py-12 sm:py-16">
             <nav className="flex items-center gap-1.5 text-sm text-muted">
@@ -104,15 +104,13 @@ export default async function CaseStudyPage({
           </Container>
         </div>
 
+        <div className="bg-cream">
         <Container className="max-w-[900px] py-14">
           {/* before / after */}
           <div className="grid gap-5 sm:grid-cols-2">
             {(["Before", "After"] as const).map((label) => (
               <div key={label}>
-                <div
-                  className="relative h-[260px] overflow-hidden rounded-[20px]"
-                  style={{ border: "1px solid #d9eae3" }}
-                >
+                <div className="relative h-[260px] overflow-hidden rounded-2xl border border-line">
                   <PhotoSlot label={`${label} photo`} />
                   <span
                     className="absolute left-3.5 top-3.5 rounded-lg px-2.5 py-1.5 text-[12px] font-bold text-white"
@@ -126,15 +124,17 @@ export default async function CaseStudyPage({
           </div>
 
           {/* stats */}
-          <div className="mt-8 grid gap-4 sm:grid-cols-3">
+          <div className="mt-10 grid gap-y-8 border-t border-line pt-8 sm:grid-cols-3 sm:gap-y-0">
             {stats.map((s) => {
               const Icon = s.icon;
               return (
-                <div key={s.label} className="rounded-[18px] border border-line bg-surface p-5">
-                  <span className="inline-flex items-center gap-1.5 text-[13px] font-semibold text-muted">
-                    <Icon size={15} className="text-accent" /> {s.label}
-                  </span>
-                  <div className="mt-1.5 text-[16px] font-bold text-ink">{s.value}</div>
+                <div
+                  key={s.label}
+                  className="sm:border-l sm:border-line sm:pl-8 sm:pr-6 sm:first:border-l-0 sm:first:pl-0"
+                >
+                  <Icon size={22} strokeWidth={1.75} className="text-accent" />
+                  <div className="mt-3.5 text-[13px] font-semibold text-muted">{s.label}</div>
+                  <div className="mt-1 text-[16px] font-bold text-ink">{s.value}</div>
                 </div>
               );
             })}
@@ -148,9 +148,7 @@ export default async function CaseStudyPage({
             <ul className="mt-5 grid gap-3 sm:grid-cols-2">
               {c.scope.map((item) => (
                 <li key={item} className="flex items-start gap-2.5">
-                  <span className="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full bg-success/15 text-success">
-                    <Check size={13} strokeWidth={3} />
-                  </span>
+                  <Check size={18} strokeWidth={2.25} className="mt-0.5 shrink-0 text-accent" />
                   <span className="text-[15px] text-ink-soft">{item}</span>
                 </li>
               ))}
@@ -161,6 +159,7 @@ export default async function CaseStudyPage({
             <CtaStrip />
           </div>
         </Container>
+        </div>
       </main>
       <Footer />
     </>

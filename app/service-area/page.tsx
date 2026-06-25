@@ -24,7 +24,7 @@ export default function ServiceAreaIndexPage() {
       <main>
         <div
           className="-mt-[84px] pt-[84px]"
-          style={{ background: "linear-gradient(180deg,#e7f6f1 0%,#f4faf8 60%,#f4faf8 100%)" }}
+          style={{ background: "linear-gradient(180deg,#e7f6f1 0%,#faf6ef 60%,#faf6ef 100%)" }}
         >
           <Container className="max-w-[1100px] py-12 sm:py-16">
             <nav className="flex items-center gap-1.5 text-sm text-muted">
@@ -42,27 +42,29 @@ export default function ServiceAreaIndexPage() {
           </Container>
         </div>
 
-        <Container className="max-w-[1100px] py-14">
-          <h2 className="font-display text-2xl font-extrabold text-ink">Towns</h2>
-          <div className="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {towns.map((l) => (
-              <LocationCard key={l.slug} slug={l.slug} name={l.name} region={l.region} />
-            ))}
-          </div>
+        <section className="bg-cream">
+          <Container className="max-w-[1100px] py-14">
+            <h2 className="font-display text-2xl font-extrabold text-ink">Towns</h2>
+            <div className="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              {towns.map((l) => (
+                <LocationCard key={l.slug} slug={l.slug} name={l.name} region={l.region} />
+              ))}
+            </div>
 
-          <h2 className="mt-12 font-display text-2xl font-extrabold text-ink">
-            Counties
-          </h2>
-          <div className="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {counties.map((l) => (
-              <LocationCard key={l.slug} slug={l.slug} name={l.name} region={l.region} />
-            ))}
-          </div>
+            <h2 className="mt-12 font-display text-2xl font-extrabold text-ink">
+              Counties
+            </h2>
+            <div className="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              {counties.map((l) => (
+                <LocationCard key={l.slug} slug={l.slug} name={l.name} region={l.region} />
+              ))}
+            </div>
 
-          <div className="mt-14">
-            <CtaStrip />
-          </div>
-        </Container>
+            <div className="mt-14">
+              <CtaStrip />
+            </div>
+          </Container>
+        </section>
       </main>
       <Footer />
     </>
@@ -81,12 +83,10 @@ function LocationCard({
   return (
     <Link
       href={`/service-area/${slug}`}
-      className="card-warm group flex items-center justify-between gap-3 rounded-[18px] p-5 transition hover:border-accent/50"
+      className="group flex items-center justify-between gap-3 rounded-2xl border border-line bg-surface p-5 transition hover:border-accent/50"
     >
       <span className="flex items-center gap-3">
-        <span className="grid h-10 w-10 place-items-center rounded-xl bg-brand-tint text-accent">
-          <MapPin size={18} />
-        </span>
+        <MapPin size={22} strokeWidth={1.75} className="text-accent" />
         <span>
           <span className="block font-bold text-ink">{name}</span>
           <span className="block text-[13px] text-muted">{region}</span>

@@ -23,7 +23,7 @@ export default function Image() {
           flexDirection: "column",
           justifyContent: "space-between",
           padding: "72px",
-          background: "linear-gradient(135deg,#f4faf8 0%,#d7f0e6 55%,#a9e6d2 100%)",
+          background: "linear-gradient(135deg,#faf6ef 0%,#d7f0e6 55%,#a9e6d2 100%)",
           fontFamily: "sans-serif",
         }}
       >

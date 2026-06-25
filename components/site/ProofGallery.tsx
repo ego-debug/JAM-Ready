@@ -92,7 +92,7 @@ export function ProofGallery() {
   }, []);
 
   return (
-    <section id="proof" className="bg-surface pb-24">
+    <section id="proof" className="bg-cream-cool pb-24">
       <div className="mx-auto max-w-[1200px] px-6 sm:px-8">
         <div className="mb-[38px] flex flex-wrap items-end justify-between gap-6">
           <h2 className="m-0 text-[clamp(28px,3.5vw,44px)] font-extrabold leading-[1.05] tracking-[-1.4px] text-ink">

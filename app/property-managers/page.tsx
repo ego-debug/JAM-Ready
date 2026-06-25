@@ -60,7 +60,7 @@ export default function PropertyManagersPage() {
       <main>
         <div
           className="-mt-[84px] pt-[84px]"
-          style={{ background: "linear-gradient(180deg,#e7f6f1 0%,#f4faf8 60%,#f4faf8 100%)" }}
+          style={{ background: "linear-gradient(180deg,#e7f6f1 0%,#faf6ef 60%,#faf6ef 100%)" }}
         >
           <Container className="max-w-[1000px] py-12 sm:py-16">
             <nav className="flex items-center gap-1.5 text-sm text-muted">
@@ -68,8 +68,8 @@ export default function PropertyManagersPage() {
               <ChevronRight size={14} />
               <span className="text-ink-soft">Property managers</span>
             </nav>
-            <span className="mt-5 inline-flex items-center gap-1.5 rounded-full border border-line bg-surface px-3.5 py-1.5 text-sm font-semibold text-accent">
-              <Building2 size={15} /> For owners, PMs &amp; leasing teams
+            <span className="mt-5 inline-flex items-center gap-3 text-[14px] font-semibold text-accent">
+              <span className="h-px w-8 bg-accent/50" /> For owners, PMs &amp; leasing teams
             </span>
             <h1 className="mt-4 max-w-[820px] text-[clamp(32px,4.6vw,56px)] font-extrabold leading-[1.03] tracking-[-1.8px] text-ink">
               Make-ready built for{" "}
@@ -92,17 +92,19 @@ export default function PropertyManagersPage() {
           </Container>
         </div>
 
-        <Container className="max-w-[1000px] py-14">
-          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="bg-cream">
+          <Container className="max-w-[1000px] py-14">
+          <div className="grid gap-y-10 border-t border-line pt-10 sm:grid-cols-2 lg:grid-cols-3 lg:gap-y-0">
             {values.map((v) => {
               const Icon = v.icon;
               return (
-                <div key={v.title} className="card-warm rounded-[20px] p-6">
-                  <span className="grid h-11 w-11 place-items-center rounded-[14px] bg-brand-tint text-accent">
-                    <Icon size={22} />
-                  </span>
-                  <h2 className="mb-2 mt-4 text-[17px] font-extrabold text-ink">{v.title}</h2>
-                  <p className="m-0 text-[14.5px] leading-relaxed text-ink-soft">{v.body}</p>
+                <div
+                  key={v.title}
+                  className="lg:border-l lg:border-line lg:pl-8 lg:pr-6 lg:first:border-l-0 lg:first:pl-0"
+                >
+                  <Icon size={22} strokeWidth={1.75} className="text-accent" />
+                  <h2 className="mt-4 text-[17px] font-extrabold text-ink">{v.title}</h2>
+                  <p className="mt-2 text-[14.5px] leading-relaxed text-ink-soft">{v.body}</p>
                 </div>
               );
             })}
@@ -113,25 +115,30 @@ export default function PropertyManagersPage() {
             <h2 className="font-display text-2xl font-extrabold text-ink">
               How we work with managers
             </h2>
-            <ol className="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            <ol className="mt-10 grid gap-y-10 border-t border-line pt-10 sm:grid-cols-2 lg:grid-cols-4 lg:gap-y-0">
               {steps.map((s, i) => (
-                <li key={s.title} className="rounded-[18px] border border-line bg-surface p-5">
-                  <span className="grid h-8 w-8 place-items-center rounded-full bg-accent text-[14px] font-extrabold text-white">
-                    {i + 1}
+                <li
+                  key={s.title}
+                  className="lg:border-l lg:border-line lg:pl-8 lg:pr-6 lg:first:border-l-0 lg:first:pl-0"
+                >
+                  <span className="font-display text-[15px] font-bold tabular-nums text-accent">
+                    {String(i + 1).padStart(2, "0")}
                   </span>
-                  <h3 className="mb-1.5 mt-3 text-[16px] font-bold text-ink">{s.title}</h3>
-                  <p className="m-0 text-[14px] leading-relaxed text-ink-soft">{s.body}</p>
+                  <h3 className="mt-5 text-[16px] font-extrabold text-ink">{s.title}</h3>
+                  <p className="mt-2.5 text-[14px] leading-relaxed text-ink-soft">{s.body}</p>
                 </li>
               ))}
             </ol>
           </div>
+          </Container>
+        </div>
 
+        <div className="bg-cream">
+          <Container className="max-w-[1000px] py-14">
           {/* terms note */}
-          <div className="mt-12 flex flex-col gap-3 rounded-[20px] border border-line bg-canvas p-6 sm:flex-row sm:items-center sm:justify-between">
+          <div className="flex flex-col gap-3 rounded-3xl border border-line bg-surface p-6 sm:flex-row sm:items-center sm:justify-between">
             <div className="flex items-start gap-3">
-              <span className="mt-0.5 grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-surface text-success">
-                <Check size={18} strokeWidth={2.6} />
-              </span>
+              <Check size={22} strokeWidth={1.75} className="mt-0.5 shrink-0 text-accent" />
               <p className="text-[15px] text-ink-soft">
                 <span className="font-semibold text-ink">No deposit for managed accounts.</span>{" "}
                 We invoice after each unit is signed off. New accounts may start
@@ -146,7 +153,8 @@ export default function PropertyManagersPage() {
               sub="Send us a unit or your turn list and we will scope it the same day."
             />
           </div>
-        </Container>
+          </Container>
+        </div>
       </main>
       <Footer />
     </>
