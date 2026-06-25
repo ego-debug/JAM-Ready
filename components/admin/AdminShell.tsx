@@ -8,6 +8,7 @@ import {
   ExternalLink,
   LogOut,
   HardHat,
+  Calculator,
 } from "lucide-react";
 import { Logo } from "@/components/site/Logo";
 import { cn } from "@/lib/utils";
@@ -15,6 +16,7 @@ import { cn } from "@/lib/utils";
 const nav = [
   { label: "Dashboard", href: "/admin", icon: LayoutDashboard, exact: true },
   { label: "Crew", href: "/admin/crew", icon: Users, exact: false },
+  { label: "Calculator", href: "/admin/calculator", icon: Calculator, exact: false },
 ];
 
 export function AdminShell({ children }: { children: React.ReactNode }) {

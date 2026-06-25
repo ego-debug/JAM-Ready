@@ -102,11 +102,12 @@ export const SERVICE_PAGES: ServicePage[] = [
       "Tear-out and disposal of old flooring",
       "Baseboards, quarter-round, and transitions",
       "Subfloor prep and leveling where needed",
-      "Durable, landlord-friendly material options",
+      "Install of the flooring you supply",
       "Cleaned and ready to show",
     ],
     why: "Flooring is one of the biggest drivers of perceived value and a common reason a unit sits. Durable LVP also lowers your cost on the next turn.",
     faqs: [
+      { q: "Do you supply the flooring?", a: "You pick the flooring and we handle the tear-out, prep, install, baseboards, and disposal, so our price covers the labor. Prefer not to source it yourself? We work with flooring suppliers and can arrange the material, quoted separately from our labor." },
       { q: "What flooring is best for rentals?", a: "LVP is the most popular for rentals: durable, water-resistant, and it looks new for years, which lowers future turn costs." },
       { q: "Do you remove the old flooring?", a: "Yes. Tear-out, disposal, and subfloor prep are included in the flooring scope." },
       { q: "How long does a flooring turn take?", a: "Most single-unit flooring jobs are one to two days." },

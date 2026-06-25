@@ -30,6 +30,16 @@ export default function TermsPage() {
         coordinated through licensed partners and quoted separately.
       </p>
 
+      <h2>Materials</h2>
+      <p>
+        Materials and finishes for the unit are supplied by the owner. This
+        includes paint, flooring, fixtures, appliances, doors, and hardware. Our
+        pricing covers labor and installation. We bring our own jobsite supplies,
+        such as patching compound, caulk, and cleaning supplies. If the owner
+        asks us to arrange paint or flooring material, we coordinate it through a
+        supplier and quote that material separately from our labor.
+      </p>
+
       <h2>Quotes and scheduling</h2>
       <ul>
         <li>
@@ -67,10 +77,12 @@ export default function TermsPage() {
         performed by appropriately licensed partners.
       </p>
 
-      <h2>Warranty</h2>
+      <h2>Workmanship</h2>
       <p>
-        Completed work is covered by our{" "}
-        <a href="/warranty">workmanship warranty</a>.
+        Before a job is marked done, we walk the unit with you and complete a
+        punch list. Issues found at that time are corrected before close-out. We
+        do not provide an ongoing or time-based warranty. Damage caused by
+        tenants or by work altered after we finish is not our responsibility.
       </p>
 
       <h2>Limitation of liability</h2>
@@ -83,7 +95,7 @@ export default function TermsPage() {
       <h2>Cancellation</h2>
       <p>
         You may cancel or reschedule before work begins. Work already performed
-        and materials already purchased are billable.
+        is billable.
       </p>
 
       <h2>Governing law</h2>

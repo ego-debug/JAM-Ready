@@ -9,6 +9,10 @@ import type { Lane, UnitType } from "@/lib/types";
  *
  * `defaultPrice` values are placeholders for Jovan to set (spec §13).
  * They're editable per line item in the quote builder.
+ *
+ * All prices are LABOR ONLY. The owner supplies the materials and finishes
+ * (paint, flooring, fixtures, appliances, doors, hardware). Material the owner
+ * asks us to arrange is quoted separately, not on these lines.
  */
 
 export interface ServiceDef {
@@ -33,13 +37,13 @@ export const GREEN_SERVICES: ServiceDef[] = [
   { id: "drywall", name: "Drywall patch & repair", lane: "green", unitType: "per_room", defaultPrice: 120 },
   { id: "spackle-caulk", name: "Spackle & caulk", lane: "green", unitType: "per_room", defaultPrice: 60 },
   { id: "paint", name: "Interior painting (walls / trim / ceilings)", lane: "green", unitType: "per_sqft", defaultPrice: 3 },
-  { id: "flooring-lvp", name: "Flooring: LVP / laminate (installed)", lane: "green", unitType: "per_sqft", defaultPrice: 6 },
-  { id: "flooring-tile", name: "Flooring: tile (installed)", lane: "green", unitType: "per_sqft", defaultPrice: 12 },
-  { id: "flooring-carpet", name: "Flooring: carpet (installed)", lane: "green", unitType: "per_sqft", defaultPrice: 4 },
-  { id: "trim-doors", name: "Trim, baseboards, interior doors, locks, weatherstripping", lane: "green", unitType: "per_item", defaultPrice: 75 },
+  { id: "flooring-lvp", name: "Flooring: LVP / laminate install", lane: "green", unitType: "per_sqft", defaultPrice: 2.5 },
+  { id: "flooring-tile", name: "Flooring: tile install", lane: "green", unitType: "per_sqft", defaultPrice: 8 },
+  { id: "flooring-carpet", name: "Flooring: carpet install", lane: "green", unitType: "per_sqft", defaultPrice: 1.5 },
+  { id: "trim-doors", name: "Trim, baseboards, interior doors, locks, weatherstripping", lane: "green", unitType: "per_item", defaultPrice: 85 },
   { id: "mounting", name: "Blinds, mirrors, shelving, TV mounting", lane: "green", unitType: "per_item", defaultPrice: 50 },
-  { id: "cabinet-counter", name: "Cabinet & countertop install, hardware swaps", lane: "green", unitType: "per_item", defaultPrice: 150 },
-  { id: "appliance", name: "Plug-in appliance set & hookup", lane: "green", unitType: "per_item", defaultPrice: 80 },
+  { id: "cabinet-counter", name: "Cabinet & countertop install, hardware swaps", lane: "green", unitType: "per_item", defaultPrice: 165 },
+  { id: "appliance", name: "Plug-in appliance set & hookup", lane: "green", unitType: "per_item", defaultPrice: 70 },
   { id: "fixture-swap", name: "Like-for-like swaps: faucet, toilet, tub & shower fixtures, disposal (no pipe change)", lane: "green", unitType: "per_item", defaultPrice: 90 },
   { id: "locks", name: "Locks, deadbolts & re-key", lane: "green", unitType: "per_item", defaultPrice: 45 },
   { id: "cleanout", name: "Cleanout, junk removal, pressure washing", lane: "green", unitType: "flat", defaultPrice: 200 },
